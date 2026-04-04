@@ -162,7 +162,7 @@ export default function StaffPage() {
           <p className="text-charcoal-muted leading-relaxed">
             Our team of licensed dermatology and aesthetics professionals
             brings together clinical precision, advanced training, cultural
-            awareness, and a genuine commitment to patient care — for every
+            awareness, and a genuine commitment to patient care for every
             skin type.
           </p>
         </div>
@@ -299,7 +299,7 @@ export default function StaffPage() {
               Clearskin & Wellness Aesthetics operates under the medical
               leadership of North Carolina Center for Dermatology. This means
               every cosmetic and wellness treatment is informed by deep
-              dermatological expertise — giving you a level of confidence and
+              dermatological expertise, giving you a level of confidence and
               safety that most cosmetic practices cannot match.
             </p>
             <a

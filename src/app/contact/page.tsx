@@ -38,7 +38,7 @@ export default function ContactPage() {
               <p className="text-charcoal-muted leading-relaxed max-w-xl mx-auto">
                 Whether you&apos;re ready to book your first consultation or
                 have questions about a treatment, we&apos;re here to help. Reach
-                out by phone, email, or the form below — our team will respond
+                out by phone, email, or the form below. Our team will respond
                 promptly.
               </p>
             </FadeIn>
@@ -411,7 +411,7 @@ export default function ContactPage() {
               We understand that trying a new practice takes trust. Every
               consultation begins with a thorough skin assessment and an honest
               conversation about your goals. There&apos;s no pressure, no
-              upselling — just expert guidance from a team that genuinely cares
+              upselling. Just expert guidance from a team that genuinely cares
               about your skin health.
             </p>
             <p className="text-sm text-taupe-dark">

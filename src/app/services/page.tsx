@@ -225,7 +225,7 @@ export default function ServicesPage() {
               </h1>
               <p className="text-charcoal-muted leading-relaxed max-w-xl mx-auto mb-8">
                 From expert injectables and advanced laser technology to
-                restorative facials and skin rejuvenation — every treatment is
+                restorative facials and skin rejuvenation, every treatment is
                 delivered with clinical precision and personalized to your
                 unique goals.
               </p>

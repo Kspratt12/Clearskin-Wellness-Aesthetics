@@ -151,9 +151,9 @@ export default function HomePage() {
                 className="text-charcoal-muted leading-relaxed mb-4 text-base"
               >
                 Clearskin & Wellness Aesthetics is Durham&apos;s premier
-                destination for cosmetic treatments and skin wellness —
-                thoughtfully designed for every skin type, every concern, every
-                goal.
+                destination for cosmetic treatments and skin wellness,
+                thoughtfully designed for every skin type, every concern,
+                and every goal.
               </motion.p>
 
               <motion.p
@@ -492,7 +492,7 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="Why Clearskin & Wellness"
             title="More Than a Med Spa"
-            description="We bridge the gap between clinical dermatology and cosmetic aesthetics — giving you access to treatments that are both beautiful and medically sound."
+            description="We bridge the gap between clinical dermatology and cosmetic aesthetics, giving you access to treatments that are both beautiful and medically sound."
           />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -685,7 +685,7 @@ export default function HomePage() {
                 <p className="text-charcoal-muted leading-relaxed mb-8">
                   This means every treatment you receive is informed by deep
                   medical knowledge of the skin. Your provider team doesn&apos;t
-                  just know aesthetics — they understand dermatology at its core.
+                  just know aesthetics. They understand dermatology at its core.
                   That&apos;s a level of confidence most cosmetic practices
                   simply can&apos;t offer.
                 </p>
@@ -795,7 +795,7 @@ export default function HomePage() {
                   savings on everything from facials to injectables.
                 </p>
                 <p className="text-taupe-light leading-relaxed mb-8">
-                  Plans start at just $85/month — with complimentary services
+                  Plans start at just $85/month with complimentary services
                   that roll over month to month within the first year.
                 </p>
 
