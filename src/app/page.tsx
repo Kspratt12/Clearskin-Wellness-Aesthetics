@@ -25,6 +25,7 @@ const featuredTreatments = [
       "Smooth fine lines and restore a naturally refreshed appearance with expertly placed neuromodulator treatments.",
     image: "Facial treatment, neuromodulator injection",
     photo: "/images/services/neuromodulators.png",
+    href: "/services#injectables",
   },
   {
     title: "Dermal Fillers",
@@ -33,6 +34,7 @@ const featuredTreatments = [
       "Restore youthful volume and enhance facial contours with premium hyaluronic acid fillers, tailored to your anatomy.",
     image: "Dermal filler treatment close-up",
     photo: "/images/services/dermal-fillers.png",
+    href: "/services#injectables",
   },
   {
     title: "Morpheus8",
@@ -41,6 +43,7 @@ const featuredTreatments = [
       "Tighten, firm, and rejuvenate skin with this advanced combination of microneedling and radiofrequency energy.",
     image: "Morpheus8 device treatment on face",
     photo: "/images/services/morpheus8.png",
+    href: "/services#advanced",
   },
   {
     title: "PicoSure Pro",
@@ -49,6 +52,7 @@ const featuredTreatments = [
       "Address pigmentation, melasma, acne scars, and uneven tone with next-generation picosecond laser technology.",
     image: "Laser skin treatment session",
     photo: "/images/services/picosure-pro.png",
+    href: "/services#advanced",
   },
   {
     title: "Medical Microneedling",
@@ -57,6 +61,7 @@ const featuredTreatments = [
       "Stimulate your skin's natural collagen production to improve texture, scarring, and fine lines with medical-grade precision.",
     image: "SkinPen microneedling close-up",
     photo: "/images/services/medical-microneedling.png",
+    href: "/services#rejuvenation",
   },
   {
     title: "Laser Hair Removal",
@@ -64,6 +69,7 @@ const featuredTreatments = [
     description:
       "Achieve smooth, lasting results with targeted laser technology for face, body, and all skin types.",
     image: "Laser hair removal treatment",
+    href: "/services#advanced",
     photo: "/images/services/laser-hair-removal.png",
   },
 ];
@@ -324,7 +330,7 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {featuredTreatments.map((treatment, i) => (
               <FadeIn key={treatment.title} delay={i * 0.08}>
-                <div className="group bg-warm-white border border-sand/60 hover:border-champagne/30 transition-all duration-500 hover:shadow-[0_8px_30px_rgba(0,0,0,0.04)]">
+                <Link href={treatment.href} className="block group bg-warm-white border border-sand/60 hover:border-champagne/30 transition-all duration-500 hover:shadow-[0_8px_30px_rgba(0,0,0,0.04)]">
                   {treatment.photo ? (
                     <div className="relative aspect-[3/2] overflow-hidden bg-sand-light">
                       <Image
@@ -353,7 +359,7 @@ export default function HomePage() {
                       {treatment.description}
                     </p>
                   </div>
-                </div>
+                </Link>
               </FadeIn>
             ))}
           </div>

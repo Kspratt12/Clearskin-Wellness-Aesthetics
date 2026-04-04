@@ -93,6 +93,7 @@ const skinRejuvenation: Service[] = [
     description:
       "A regenerative treatment using platelet-rich plasma from your own blood to stimulate hair follicles and support natural hair growth. Multiple sessions and long-term maintenance are recommended for best results.",
     image: "PRP hair treatment session",
+    photo: "/images/services/prp-hair.png",
   },
   {
     name: "Chemical Peels for Face",
@@ -101,6 +102,7 @@ const skinRejuvenation: Service[] = [
       "Professionally selected peels address hyperpigmentation, age spots, sun damage, melasma, fine lines, acne scars, and excess oil. Each peel is chosen based on your specific skin type and concerns.",
     duration: "30 minutes",
     image: "Chemical peel application",
+    photo: "/images/services/chemical-peels.png",
   },
 ];
 
@@ -112,6 +114,7 @@ const facials: Service[] = [
       "A focused 30-minute treatment ideal for teens, acne-prone skin, or regular skin maintenance. Includes skin analysis, steam cleansing, exfoliation, extractions, mask, hydrating serum, eye lift serum, moisturizer, and sunscreen.",
     duration: "30 minutes",
     image: "Express facial treatment",
+    photo: "/images/services/express-facial.png",
   },
   {
     name: "Skin Therapy Facial",
@@ -120,6 +123,7 @@ const facials: Service[] = [
       "Our signature facial designed for deep extractions, anti-aging support, and lasting hydration. Includes skin analysis, steam cleansing, exfoliation, extractions, massage, hydrating mask, Vitamin C serum, moisturizer, eye lift serum, and sunscreen.",
     duration: "50 minutes",
     image: "Skin therapy facial session",
+    photo: "/images/services/skin-therapy-facial.png",
   },
   {
     name: "Back Facial Treatment",
@@ -128,6 +132,7 @@ const facials: Service[] = [
       "Target back acne, congestion, and uneven texture with a dedicated cleansing, exfoliation, extraction, and hydration treatment, finished with massage, mask, body cream, and sunscreen.",
     duration: "45 minutes",
     image: "Back facial treatment",
+    photo: "/images/services/back-facial-treatment.png",
   },
   {
     name: "Microdermabrasion Treatment",
@@ -136,6 +141,7 @@ const facials: Service[] = [
       "A refreshing treatment that retexturizes and cleanses the superficial skin layer. Helps with fine lines, acne scars, enlarged pores, excess oil, blackheads, whiteheads, and age spots.",
     duration: "30 minutes",
     image: "Microdermabrasion treatment",
+    photo: "/images/services/microdermabrasion.png",
   },
   {
     name: "Dermaplaning Facial Treatment",
@@ -144,6 +150,7 @@ const facials: Service[] = [
       "A gentle, noninvasive treatment that removes dead skin cells and fine facial hair using a precision blade. Improves smoothness, enhances product absorption, and reveals a brighter complexion. Safe for most skin types.",
     duration: "60 minutes",
     image: "Dermaplaning facial treatment",
+    photo: "/images/services/dermaplaning.png",
   },
   {
     name: "Microdermabrasion & Skin Facial Treatment",
@@ -152,6 +159,7 @@ const facials: Service[] = [
       "The best of both worlds. Medical-grade microdermabrasion paired with a relaxing, hydrating facial for a deeper cleanse and visible glow.",
     duration: "60 minutes",
     image: "Combined microdermabrasion and facial",
+    photo: "/images/services/microdermabrasion-facial.png",
   },
 ];
 
