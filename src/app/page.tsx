@@ -195,9 +195,9 @@ export default function HomePage() {
                 transition={{ duration: 0.7, delay: 0.2 }}
                 className="font-[family-name:var(--font-heading)] text-[2.5rem] md:text-5xl lg:text-[3.25rem] xl:text-[3.75rem] font-light text-charcoal leading-[1.06] mb-8"
               >
-                The Skin You Want.
+                Clinical Precision.
                 <br />
-                <span className="italic">The Experts You Trust.</span>
+                <span className="italic">Visible Results.</span>
               </motion.h1>
 
               <motion.p
@@ -206,9 +206,9 @@ export default function HomePage() {
                 transition={{ duration: 0.6, delay: 0.35 }}
                 className="text-charcoal-muted leading-[1.85] mb-5 text-[0.9rem] max-w-[420px]"
               >
-                Cosmetic treatments guided by board-certified dermatology.
-                Every protocol is clinical. Every provider is licensed.
-                Every result is earned, not promised.
+                Advanced aesthetics under board-certified dermatology
+                oversight. Licensed providers. Medical-grade protocols.
+                Outcomes you can see.
               </motion.p>
 
               {/* Trust Signals */}
@@ -218,17 +218,14 @@ export default function HomePage() {
                 transition={{ duration: 0.5, delay: 0.45 }}
                 className="flex items-center gap-4 mb-10"
               >
-                <div className="flex items-center gap-2">
-                  <Shield size={13} className="text-champagne-dark" strokeWidth={1.5} />
-                  <span className="text-[0.7rem] text-taupe-dark tracking-wide">NC Center for Dermatology</span>
-                </div>
-                <div className="w-px h-3 bg-sand" />
-                <div className="flex items-center gap-1">
+                <div className="flex items-center gap-1.5">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} size={9} className="fill-champagne text-champagne" />
                   ))}
-                  <span className="text-[0.7rem] text-taupe-dark ml-1.5">5.0 Google</span>
+                  <span className="text-[0.68rem] text-taupe-dark ml-1">5.0</span>
                 </div>
+                <div className="w-px h-3 bg-sand/80" />
+                <span className="text-[0.68rem] text-taupe-dark tracking-wide">Dermatology-Backed Practice</span>
               </motion.div>
 
               {/* CTAs */}
@@ -244,7 +241,7 @@ export default function HomePage() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center bg-charcoal text-warm-white px-9 py-[15px] text-[0.78rem] tracking-[0.18em] uppercase font-medium hover:bg-charcoal-light transition-all duration-300 group"
                 >
-                  Book Consultation
+                  Schedule Consultation
                   <ArrowRight
                     size={14}
                     className="ml-2.5 group-hover:translate-x-1 transition-transform"
@@ -254,7 +251,7 @@ export default function HomePage() {
                   href="/services"
                   className="inline-flex items-center justify-center border border-charcoal/15 text-charcoal px-9 py-[15px] text-[0.78rem] tracking-[0.14em] uppercase hover:border-charcoal/35 hover:bg-sand-light/40 transition-all duration-300"
                 >
-                  View Treatments & Pricing
+                  Explore Services
                 </Link>
               </motion.div>
 
@@ -265,14 +262,14 @@ export default function HomePage() {
                 transition={{ duration: 0.5, delay: 0.7 }}
                 className="mt-9 pt-6 border-t border-sand/60"
               >
-                <p className="text-[0.65rem] text-taupe-dark tracking-[0.12em] uppercase">
-                  Medical Director
-                </p>
-                <p className="text-[0.8rem] text-charcoal font-medium mt-1">
+                <p className="text-[0.8rem] text-charcoal font-medium">
                   Dr. Jeffrey Scales, MD
                 </p>
-                <p className="text-[0.65rem] text-taupe tracking-wide mt-0.5">
-                  Board-Certified Dermatologist &middot; Penn Med &middot; Wake Forest
+                <p className="text-[0.63rem] text-taupe-dark tracking-[0.08em] mt-1">
+                  Board-Certified Dermatologist &middot; Medical Director
+                </p>
+                <p className="text-[0.6rem] text-taupe tracking-wide mt-0.5">
+                  University of Pennsylvania &middot; Wake Forest University
                 </p>
               </motion.div>
             </div>
