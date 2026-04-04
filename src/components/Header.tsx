@@ -198,7 +198,7 @@ export function Header() {
               <Calendar size={16} className="text-champagne" />
               Book Appointment
               <span className="text-[0.6rem] text-taupe-light font-normal normal-case tracking-normal ml-1 hidden lg:inline">
-                — 30 sec
+                · 30 sec
               </span>
             </a>
           </motion.div>

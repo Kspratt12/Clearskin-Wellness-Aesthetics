@@ -112,7 +112,7 @@ const providerPreview = [
     name: "Dr. Jeffrey Scales",
     title: "MD, Medical Director",
     credential: "Board-Certified Dermatologist",
-    personality: "The clinical mind behind every protocol. Penn Med-trained, Wake Forest residency. He doesn't do trendy — he does what works.",
+    personality: "The clinical mind behind every protocol. Penn Med-trained, Wake Forest residency. He doesn't do trendy. He does what works.",
     image: "/images/team/jeffery-scales.png",
   },
   {
@@ -133,7 +133,7 @@ const providerPreview = [
     name: "Aaron Pankey",
     title: "Licensed Esthetician",
     credential: "Specialized in Melanated Skin",
-    personality: "Aveda-trained with a gift for melanin-rich skin. He educates as he treats — you'll leave knowing your skin better.",
+    personality: "Aveda-trained with a gift for melanin-rich skin. He educates as he treats. You'll leave knowing your skin better.",
     image: "/images/team/aaron-pankey.png",
   },
 ];
@@ -395,7 +395,7 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="Signature Treatments"
             title="What We Do Best"
-            description="Selected by dermatologists. Performed by licensed specialists. Every protocol is medical-grade — not cosmetic guesswork."
+            description="Selected by dermatologists. Performed by licensed specialists. Every protocol is medical-grade, not cosmetic guesswork."
           />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
@@ -1025,7 +1025,7 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="Meet the Team"
             title="The People Behind Your Results"
-            description="Every provider is licensed, dermatology-trained, and hand-selected. You're not just booking a service — you're choosing who treats you."
+            description="Every provider is licensed, dermatology-trained, and hand-selected. You're not just booking a service. You're choosing who treats you."
           />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
