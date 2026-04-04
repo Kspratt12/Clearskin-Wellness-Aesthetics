@@ -22,88 +22,88 @@ const featuredTreatments = [
     title: "Neuromodulators",
     subtitle: "Botox, Dysport, Xeomin & Daxxify",
     description:
-      "Smooth fine lines and restore a naturally refreshed appearance with expertly placed neuromodulator treatments.",
+      "Precisely placed to soften lines across the forehead, brows, and eyes. Results in two weeks, lasting months.",
     image: "Facial treatment, neuromodulator injection",
     photo: "/images/services/neuromodulators.png",
     href: "/services#injectables",
-    price: "Starting at $4/unit",
+    price: "From $4/unit",
   },
   {
     title: "Dermal Fillers",
     subtitle: "Volume Restoration & Contouring",
     description:
-      "Restore youthful volume and enhance facial contours with premium hyaluronic acid fillers, tailored to your anatomy.",
+      "Restore volume in the lips, cheeks, jawline, and under-eyes with premium hyaluronic acid fillers mapped to your anatomy.",
     image: "Dermal filler treatment close-up",
     photo: "/images/services/dermal-fillers.png",
     href: "/services#injectables",
-    price: "Starting at $700/syringe",
+    price: "From $700/syringe",
   },
   {
     title: "Morpheus8",
     subtitle: "Microneedling + Radiofrequency",
     description:
-      "Tighten, firm, and rejuvenate skin with this advanced combination of microneedling and radiofrequency energy.",
+      "Deep collagen remodeling that tightens, firms, and refines contours on face and body. Visible results after one session.",
     image: "Morpheus8 device treatment on face",
     photo: "/images/services/morpheus8.png",
     href: "/services#advanced",
-    price: "Starting at $350",
+    price: "From $350",
   },
   {
     title: "PicoSure Pro",
-    subtitle: "Pigment Correction & Skin Revitalization",
+    subtitle: "Pigment Correction & Revitalization",
     description:
-      "Address pigmentation, melasma, acne scars, and uneven tone with next-generation picosecond laser technology.",
+      "Picosecond laser shatters pigment without burning surrounding tissue. Targets melasma, sun damage, acne scars, and uneven tone.",
     image: "Laser skin treatment session",
     photo: "/images/services/picosure-pro.png",
     href: "/services#advanced",
-    price: "Starting at $200",
+    price: "From $200",
   },
   {
     title: "Medical Microneedling",
     subtitle: "SkinPen Collagen Induction",
     description:
-      "Stimulate your skin's natural collagen production to improve texture, scarring, and fine lines with medical-grade precision.",
+      "Controlled micro-injuries trigger your skin's own collagen production. Effective for scarring, fine lines, and texture.",
     image: "SkinPen microneedling close-up",
     photo: "/images/services/medical-microneedling.png",
     href: "/services#rejuvenation",
-    price: "Starting at $200",
+    price: "From $200",
   },
   {
     title: "Laser Hair Removal",
     subtitle: "Long-Term Hair Reduction",
     description:
-      "Achieve smooth, lasting results with targeted laser technology for face, body, and all skin types.",
+      "Targeted laser energy for lasting smoothness on face, bikini, underarms, legs, and back. Safe for all skin types.",
     image: "Laser hair removal treatment",
     href: "/services#advanced",
     photo: "/images/services/laser-hair-removal.png",
-    price: "Starting at $50",
+    price: "From $50",
   },
 ];
 
 const whyChooseUs = [
   {
     icon: Shield,
-    title: "Dermatology-Backed Care",
+    title: "Dermatology at the Core",
     description:
-      "Every treatment is supported by the medical foundation of NC Center for Dermatology. Real expertise, not just aesthetics.",
+      "Every protocol is built on the medical foundation of NC Center for Dermatology. Not a day spa with a medical label.",
   },
   {
     icon: Award,
-    title: "Board-Certified Leadership",
+    title: "Board-Certified Oversight",
     description:
-      "Led by Dr. Jeffrey Scales, a board-certified dermatologist with residency training at Wake Forest University.",
+      "Dr. Jeffrey Scales, board-certified dermatologist (Penn Med, Wake Forest), oversees every treatment pathway.",
   },
   {
     icon: Heart,
-    title: "Inclusive by Design",
+    title: "Built for Every Skin",
     description:
-      "Our bilingual team serves patients of all skin types and backgrounds with culturally aware, personalized care.",
+      "A bilingual team trained across all skin tones, ethnicities, and concerns. Inclusive by practice, not just by promise.",
   },
   {
     icon: Sparkles,
-    title: "Advanced Technology",
+    title: "Clinical-Grade Technology",
     description:
-      "From PicoSure Pro to Morpheus8, we invest in the latest evidence-based technology for superior patient outcomes.",
+      "PicoSure Pro, Morpheus8, SkinPen, Clarity. We invest in technology that dermatologists trust, not trends.",
   },
 ];
 
@@ -456,26 +456,27 @@ export default function HomePage() {
                   <p className="text-sm text-charcoal mt-3 font-medium">
                     {result.label}
                   </p>
-                  <p className="text-xs text-charcoal-muted mt-1">
-                    Actual patient results. Individual outcomes may vary.
-                  </p>
                 </div>
               </FadeIn>
             ))}
           </div>
 
+          <p className="text-xs text-taupe-dark text-center mt-8">
+            Actual patient results. Individual outcomes may vary.
+          </p>
+
           <FadeIn delay={0.3}>
-            <div className="text-center mt-12">
+            <div className="text-center mt-8">
               <a
                 href="https://www.instagram.com/clearskinwellnessa/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center text-sm text-charcoal tracking-wider border-b border-charcoal/30 pb-1 hover:border-champagne-dark hover:text-champagne-dark transition-colors group"
+                className="inline-flex items-center text-sm text-charcoal tracking-[0.12em] uppercase border-b border-charcoal/20 pb-1.5 hover:border-champagne-dark hover:text-champagne-dark transition-colors duration-300 group"
               >
                 See More Results on Instagram
                 <ArrowRight
                   size={14}
-                  className="ml-2 group-hover:translate-x-1 transition-transform"
+                  className="ml-2 group-hover:translate-x-1.5 transition-transform"
                 />
               </a>
             </div>
@@ -484,12 +485,12 @@ export default function HomePage() {
       </section>
 
       {/* ========== MEMBERSHIP PREVIEW ========== */}
-      <section className="py-20 md:py-28 bg-ivory">
+      <section className="py-24 md:py-32 bg-ivory">
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading
             eyebrow="Membership"
-            title="Invest in Your Skin, Every Month"
-            description="Exclusive member pricing, monthly treatments, and ongoing savings on everything from facials to injectables."
+            title="Better Skin Starts with Consistency"
+            description="Four tiers. Monthly treatments. Member-only pricing on every service we offer."
           />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -497,39 +498,39 @@ export default function HomePage() {
               {
                 name: "Bronze",
                 price: "$85",
-                highlight: "Monthly facial or peel",
+                highlight: "1 facial or peel per month",
                 accent: "border-taupe",
               },
               {
                 name: "Silver",
                 price: "$120",
-                highlight: "Deeper treatments + laser savings",
+                highlight: "60-min facials + laser discounts",
                 accent: "border-taupe-light",
               },
               {
                 name: "Gold",
                 price: "$175",
-                highlight: "Free Botox units + 15% off services",
+                highlight: "5 free Botox units/mo + 15% off all services",
                 popular: true,
                 accent: "border-champagne",
               },
               {
                 name: "Platinum",
                 price: "$275",
-                highlight: "Maximum savings on every treatment",
+                highlight: "Any facial + 20% off everything",
                 accent: "border-charcoal",
               },
             ].map((tier, i) => (
               <FadeIn key={tier.name} delay={i * 0.08}>
                 <Link
                   href="/membership"
-                  className={`relative block bg-warm-white border-t-[3px] ${tier.accent} border-x border-b border-sand/60 p-6 text-center hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] transition-all duration-500 ${tier.popular ? "ring-1 ring-champagne/40" : ""}`}
+                  className={`relative block bg-warm-white border-t-[3px] ${tier.accent} border-x border-b border-sand/40 p-6 text-center hover:shadow-[0_16px_48px_rgba(0,0,0,0.07)] transition-all duration-500 ${tier.popular ? "ring-1 ring-champagne/30" : ""}`}
                 >
                   {tier.popular && (
                     <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                      <span className="inline-flex items-center gap-1 bg-gradient-to-r from-champagne-dark to-champagne text-warm-white text-[0.55rem] uppercase tracking-[0.2em] font-semibold px-3 py-1">
+                      <span className="inline-flex items-center gap-1 bg-gradient-to-r from-champagne-dark to-champagne text-warm-white text-[0.6rem] uppercase tracking-[0.2em] font-semibold px-4 py-1">
                         <Star size={8} fill="currentColor" />
-                        Popular
+                        Most Popular
                       </span>
                     </div>
                   )}
@@ -551,15 +552,15 @@ export default function HomePage() {
           </div>
 
           <FadeIn delay={0.3}>
-            <div className="text-center mt-10">
+            <div className="text-center mt-12">
               <Link
                 href="/membership"
-                className="inline-flex items-center bg-charcoal text-warm-white px-8 py-3.5 text-sm tracking-wider hover:bg-charcoal-light transition-all duration-300 group"
+                className="inline-flex items-center bg-charcoal text-warm-white px-10 py-4 text-sm tracking-[0.15em] uppercase font-medium hover:bg-charcoal-light transition-all duration-300 group"
               >
-                View All Membership Plans
+                Compare All Plans
                 <ArrowRight
                   size={15}
-                  className="ml-2 group-hover:translate-x-1 transition-transform"
+                  className="ml-3 group-hover:translate-x-1 transition-transform"
                 />
               </Link>
             </div>
@@ -572,8 +573,8 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading
             eyebrow="In Action"
-            title="Experience Our Treatments"
-            description="Watch real treatments and results from Clearskin & Wellness Aesthetics. See the care, precision, and expertise our team brings to every session."
+            title="Watch. Then Book."
+            description="Real treatments. Real sessions. See exactly what happens when you sit in our chair."
           />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -700,9 +701,9 @@ export default function HomePage() {
       <section className="py-20 md:py-28 bg-cream">
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading
-            eyebrow="Patient Reviews"
-            title="What Our Patients Say"
-            description="Real reviews from real patients. Their words speak louder than ours ever could."
+            eyebrow="5-Star Reviews"
+            title="In Their Own Words"
+            description="Unedited Google reviews from real patients. We didn't write these. They did."
           />
 
           {/* Google Rating Bar */}
