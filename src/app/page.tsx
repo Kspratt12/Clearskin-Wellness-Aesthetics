@@ -480,6 +480,90 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ========== MEMBERSHIP PREVIEW ========== */}
+      <section className="py-20 md:py-28 bg-ivory">
+        <div className="max-w-7xl mx-auto px-6">
+          <SectionHeading
+            eyebrow="Membership"
+            title="Invest in Your Skin, Every Month"
+            description="Exclusive member pricing, monthly treatments, and ongoing savings on everything from facials to injectables."
+          />
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {[
+              {
+                name: "Bronze",
+                price: "$85",
+                highlight: "Monthly facial or peel",
+                accent: "border-taupe",
+              },
+              {
+                name: "Silver",
+                price: "$120",
+                highlight: "Deeper treatments + laser savings",
+                accent: "border-taupe-light",
+              },
+              {
+                name: "Gold",
+                price: "$175",
+                highlight: "Free Botox units + 15% off services",
+                popular: true,
+                accent: "border-champagne",
+              },
+              {
+                name: "Platinum",
+                price: "$275",
+                highlight: "Maximum savings on every treatment",
+                accent: "border-charcoal",
+              },
+            ].map((tier, i) => (
+              <FadeIn key={tier.name} delay={i * 0.08}>
+                <Link
+                  href="/membership"
+                  className={`relative block bg-warm-white border-t-[3px] ${tier.accent} border-x border-b border-sand/60 p-6 text-center hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] transition-all duration-500 ${tier.popular ? "ring-1 ring-champagne/40" : ""}`}
+                >
+                  {tier.popular && (
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                      <span className="inline-flex items-center gap-1 bg-gradient-to-r from-champagne-dark to-champagne text-warm-white text-[0.55rem] uppercase tracking-[0.2em] font-semibold px-3 py-1">
+                        <Star size={8} fill="currentColor" />
+                        Popular
+                      </span>
+                    </div>
+                  )}
+                  <h3 className="text-xs uppercase tracking-[0.25em] text-champagne-dark font-semibold mb-2 mt-1">
+                    {tier.name}
+                  </h3>
+                  <div className="flex items-baseline justify-center gap-1 mb-3">
+                    <span className="font-[family-name:var(--font-heading)] text-4xl font-light text-charcoal">
+                      {tier.price}
+                    </span>
+                    <span className="text-sm text-charcoal-muted">/mo</span>
+                  </div>
+                  <p className="text-xs text-charcoal-muted leading-relaxed">
+                    {tier.highlight}
+                  </p>
+                </Link>
+              </FadeIn>
+            ))}
+          </div>
+
+          <FadeIn delay={0.3}>
+            <div className="text-center mt-10">
+              <Link
+                href="/membership"
+                className="inline-flex items-center bg-charcoal text-warm-white px-8 py-3.5 text-sm tracking-wider hover:bg-charcoal-light transition-all duration-300 group"
+              >
+                View All Membership Plans
+                <ArrowRight
+                  size={15}
+                  className="ml-2 group-hover:translate-x-1 transition-transform"
+                />
+              </Link>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* ========== VIDEO SHOWCASE ========== */}
       <section className="py-20 md:py-28 bg-cream">
         <div className="max-w-7xl mx-auto px-6">

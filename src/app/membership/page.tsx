@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, Check, Star, Info } from "lucide-react";
+import { ArrowRight, Check, Star, Info, Crown } from "lucide-react";
 import { SectionHeading } from "@/components/SectionHeading";
 import { FadeIn } from "@/components/FadeIn";
 
@@ -14,6 +14,7 @@ interface MembershipTier {
   discounts: string[];
   popular?: boolean;
   accent: string;
+  gradient: string;
 }
 
 const tiers: MembershipTier[] = [
@@ -31,6 +32,7 @@ const tiers: MembershipTier[] = [
       "15% off all products",
     ],
     accent: "border-taupe",
+    gradient: "from-taupe/10 to-transparent",
   },
   {
     name: "Silver",
@@ -47,6 +49,7 @@ const tiers: MembershipTier[] = [
       "15% off laser hair removal (single treatments)",
     ],
     accent: "border-taupe-light",
+    gradient: "from-sand/20 to-transparent",
   },
   {
     name: "Gold",
@@ -70,6 +73,7 @@ const tiers: MembershipTier[] = [
     ],
     popular: true,
     accent: "border-champagne",
+    gradient: "from-champagne/10 to-transparent",
   },
   {
     name: "Platinum",
@@ -91,6 +95,7 @@ const tiers: MembershipTier[] = [
       "20% off PicoSure (single treatments)",
     ],
     accent: "border-charcoal",
+    gradient: "from-charcoal/5 to-transparent",
   },
 ];
 
@@ -133,29 +138,37 @@ export default function MembershipPage() {
       {/* Pricing Cards */}
       <section className="bg-ivory py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6 lg:gap-5">
             {tiers.map((tier, i) => (
               <FadeIn key={tier.name} delay={i * 0.1}>
                 <div
-                  className={`relative bg-warm-white border-t-[3px] ${tier.accent} border-x border-b border-sand/60 flex flex-col h-full hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] transition-shadow duration-500`}
+                  className={`relative bg-warm-white border-t-[3px] ${tier.accent} border-x border-b border-sand/60 flex flex-col h-full hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] transition-all duration-500 ${tier.popular ? "ring-1 ring-champagne/40 scale-[1.02] xl:-mt-4 xl:mb-4" : ""}`}
                 >
+                  {/* Subtle gradient header */}
+                  <div className={`absolute inset-x-0 top-0 h-32 bg-gradient-to-b ${tier.gradient} pointer-events-none`} />
+
                   {tier.popular && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                      <span className="inline-flex items-center gap-1 bg-champagne text-charcoal text-[0.65rem] uppercase tracking-[0.15em] font-medium px-4 py-1">
-                        <Star size={10} />
+                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
+                      <span className="inline-flex items-center gap-1.5 bg-gradient-to-r from-champagne-dark to-champagne text-warm-white text-[0.6rem] uppercase tracking-[0.2em] font-semibold px-5 py-1.5 shadow-lg">
+                        <Star size={10} fill="currentColor" />
                         Most Popular
                       </span>
                     </div>
                   )}
 
-                  <div className="p-6 md:p-8 flex-1 flex flex-col">
+                  <div className="relative p-6 md:p-8 flex-1 flex flex-col">
                     {/* Header */}
                     <div className="mb-6">
-                      <h3 className="text-xs uppercase tracking-[0.2em] text-champagne-dark font-medium mb-2">
-                        {tier.name}
-                      </h3>
-                      <div className="flex items-baseline gap-1 mb-3">
-                        <span className="font-[family-name:var(--font-heading)] text-4xl font-light text-charcoal">
+                      <div className="flex items-center gap-2 mb-3">
+                        {tier.name === "Platinum" && (
+                          <Crown size={14} className="text-charcoal" />
+                        )}
+                        <h3 className="text-xs uppercase tracking-[0.25em] text-champagne-dark font-semibold">
+                          {tier.name}
+                        </h3>
+                      </div>
+                      <div className="flex items-baseline gap-1 mb-4">
+                        <span className="font-[family-name:var(--font-heading)] text-5xl font-light text-charcoal">
                           {tier.price}
                         </span>
                         <span className="text-sm text-charcoal-muted">
@@ -169,8 +182,8 @@ export default function MembershipPage() {
 
                     {/* Bonus */}
                     {tier.bonus && (
-                      <div className="bg-sand-light/80 border border-sand px-4 py-3 mb-6">
-                        <p className="text-xs text-charcoal font-medium">
+                      <div className="bg-gradient-to-r from-champagne/10 to-champagne-light/10 border border-champagne/30 px-4 py-3 mb-6">
+                        <p className="text-xs text-charcoal font-semibold tracking-wide">
                           {tier.bonus}
                         </p>
                       </div>
@@ -178,19 +191,22 @@ export default function MembershipPage() {
 
                     {/* Monthly Choice */}
                     <div className="mb-6">
-                      <h4 className="text-xs uppercase tracking-[0.12em] text-charcoal font-medium mb-3">
+                      <h4 className="text-[0.65rem] uppercase tracking-[0.15em] text-charcoal font-semibold mb-3">
                         Monthly Treatment Choice
                       </h4>
-                      <ul className="space-y-2">
+                      <ul className="space-y-2.5">
                         {tier.monthlyChoice.map((choice) => (
                           <li
                             key={choice}
-                            className="flex items-start gap-2 text-sm text-charcoal-muted"
+                            className="flex items-start gap-2.5 text-sm text-charcoal-muted"
                           >
-                            <Check
-                              size={14}
-                              className="text-champagne-dark mt-0.5 shrink-0"
-                            />
+                            <div className="w-4 h-4 rounded-full bg-champagne/15 flex items-center justify-center mt-0.5 shrink-0">
+                              <Check
+                                size={10}
+                                className="text-champagne-dark"
+                                strokeWidth={3}
+                              />
+                            </div>
                             {choice}
                           </li>
                         ))}
@@ -202,19 +218,22 @@ export default function MembershipPage() {
 
                     {/* Discounts */}
                     <div className="mb-8 flex-1">
-                      <h4 className="text-xs uppercase tracking-[0.12em] text-charcoal font-medium mb-3 mt-4">
+                      <h4 className="text-[0.65rem] uppercase tracking-[0.15em] text-charcoal font-semibold mb-3 mt-4">
                         Member Discounts
                       </h4>
                       <ul className="space-y-2">
                         {tier.discounts.map((discount) => (
                           <li
                             key={discount}
-                            className="flex items-start gap-2 text-xs text-charcoal-muted leading-relaxed"
+                            className="flex items-start gap-2.5 text-xs text-charcoal-muted leading-relaxed"
                           >
-                            <Check
-                              size={12}
-                              className="text-champagne-dark mt-0.5 shrink-0"
-                            />
+                            <div className="w-3.5 h-3.5 rounded-full bg-champagne/15 flex items-center justify-center mt-0.5 shrink-0">
+                              <Check
+                                size={8}
+                                className="text-champagne-dark"
+                                strokeWidth={3}
+                              />
+                            </div>
                             {discount}
                           </li>
                         ))}
@@ -226,10 +245,10 @@ export default function MembershipPage() {
                       href="https://nccdermatology.myaestheticrecord.com/online-booking/memberships"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`block text-center py-3 text-sm tracking-wider transition-all duration-300 ${
+                      className={`block text-center py-3.5 text-sm tracking-wider font-medium transition-all duration-300 group ${
                         tier.popular
-                          ? "bg-charcoal text-warm-white hover:bg-charcoal-light"
-                          : "border border-charcoal/20 text-charcoal hover:border-charcoal/40 hover:bg-sand-light/30"
+                          ? "bg-gradient-to-r from-charcoal to-charcoal-light text-warm-white hover:shadow-lg"
+                          : "border border-charcoal/20 text-charcoal hover:border-charcoal/40 hover:bg-sand-light/50"
                       }`}
                     >
                       Get Started
