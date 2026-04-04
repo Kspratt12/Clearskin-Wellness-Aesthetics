@@ -133,26 +133,38 @@ export default function StaffPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-warm-white py-20 md:py-28">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="max-w-3xl mx-auto text-center">
-            <FadeIn>
-              <span className="text-xs uppercase tracking-[0.3em] text-champagne-dark font-medium">
-                Our Team
-              </span>
-              <h1 className="font-[family-name:var(--font-heading)] text-4xl md:text-5xl lg:text-6xl font-light text-charcoal mt-4 mb-6 leading-[1.1]">
-                Experts Who Understand
-                <br />
-                <span className="italic">Skin Deeply</span>
-              </h1>
-              <p className="text-charcoal-muted leading-relaxed max-w-xl mx-auto">
-                Our team of licensed dermatology and aesthetics professionals
-                brings together clinical precision, advanced training, cultural
-                awareness, and a genuine commitment to patient care — for every
-                skin type.
-              </p>
-            </FadeIn>
+      <section className="relative bg-warm-white">
+        <div className="relative aspect-[21/9] md:aspect-[3/1] overflow-hidden">
+          <Image
+            src="/images/team/staff-group.png"
+            alt="Clearskin & Wellness Aesthetics team"
+            fill
+            className="object-cover object-center"
+            sizes="100vw"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-charcoal/20 to-transparent" />
+          <div className="absolute inset-0 flex items-end">
+            <div className="max-w-7xl mx-auto px-6 pb-10 md:pb-16 w-full">
+              <FadeIn>
+                <span className="text-xs uppercase tracking-[0.3em] text-champagne-light font-medium">
+                  Our Team
+                </span>
+                <h1 className="font-[family-name:var(--font-heading)] text-3xl md:text-5xl lg:text-6xl font-light text-warm-white mt-3 leading-[1.1]">
+                  Experts Who Understand{" "}
+                  <span className="italic">Skin Deeply</span>
+                </h1>
+              </FadeIn>
+            </div>
           </div>
+        </div>
+        <div className="max-w-3xl mx-auto px-6 py-10 text-center">
+          <p className="text-charcoal-muted leading-relaxed">
+            Our team of licensed dermatology and aesthetics professionals
+            brings together clinical precision, advanced training, cultural
+            awareness, and a genuine commitment to patient care — for every
+            skin type.
+          </p>
         </div>
       </section>
 

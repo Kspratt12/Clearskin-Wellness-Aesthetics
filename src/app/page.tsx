@@ -201,11 +201,16 @@ export default function HomePage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="order-1 lg:order-2"
           >
-            <ImagePlaceholder
-              label="Premium hero — serene treatment room or confident patient portrait"
-              aspectRatio="aspect-[4/5] lg:aspect-auto"
-              className="h-[50vh] lg:h-full"
-            />
+            <div className="relative h-[50vh] lg:h-full overflow-hidden bg-sand-light">
+              <Image
+                src="/images/clinic/hero.png"
+                alt="Clearskin & Wellness Aesthetics team in front of clinic"
+                fill
+                className="object-cover object-top"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                priority
+              />
+            </div>
           </motion.div>
         </div>
       </section>
@@ -389,17 +394,32 @@ export default function HomePage() {
                   <div className="relative aspect-[9/16] overflow-hidden bg-charcoal rounded-sm">
                     <video
                       src={video.src}
-                      controls
                       playsInline
-                      preload="metadata"
-                      className="w-full h-full object-cover"
-                      controlsList="nodownload"
+                      muted
+                      loop
+                      autoPlay
+                      preload="auto"
+                      className="w-full h-full object-cover cursor-pointer"
+                      onClick={(e) => {
+                        const v = e.currentTarget;
+                        if (v.paused) { v.play(); } else { v.pause(); }
+                        v.muted = !v.muted;
+                      }}
                     >
                       Your browser does not support the video tag.
                     </video>
+                    <div className="absolute bottom-3 right-3 bg-charcoal/60 backdrop-blur-sm text-warm-white p-2 rounded-full pointer-events-none">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                        <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+                      </svg>
+                    </div>
                   </div>
                   <p className="text-sm text-charcoal mt-3 font-medium">
                     {video.label}
+                  </p>
+                  <p className="text-xs text-charcoal-muted mt-0.5">
+                    Tap to unmute
                   </p>
                 </div>
               </FadeIn>
@@ -465,8 +485,8 @@ export default function HomePage() {
             <FadeIn direction="left">
               <div className="aspect-[4/3] relative w-full overflow-hidden bg-sand-light">
                 <Image
-                  src="/images/clinic/office.png"
-                  alt="North Carolina Center for Dermatology team"
+                  src="/images/team/jeffery-and-anay.png"
+                  alt="Dr. Jeffrey Scales and Anay Castro — clinical leadership"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -632,11 +652,15 @@ export default function HomePage() {
             </FadeIn>
 
             <FadeIn direction="right">
-              <ImagePlaceholder
-                label="Relaxing facial treatment or glowing skin close-up"
-                aspectRatio="aspect-[4/3]"
-                className="w-full"
-              />
+              <div className="aspect-[4/3] relative w-full overflow-hidden bg-sand-light">
+                <Image
+                  src="/images/clinic/treatment-room.png"
+                  alt="Clearskin & Wellness Aesthetics treatment room"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </div>
             </FadeIn>
           </div>
         </div>

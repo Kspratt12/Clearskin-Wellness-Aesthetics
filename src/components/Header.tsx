@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Phone, ExternalLink } from "lucide-react";
@@ -77,13 +78,23 @@ export function Header() {
       >
         <nav className="max-w-7xl mx-auto px-6 flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="flex flex-col">
-            <span className="font-[family-name:var(--font-heading)] text-2xl md:text-[1.65rem] font-semibold text-charcoal tracking-wide leading-tight">
-              Clearskin & Wellness
-            </span>
-            <span className="text-[0.65rem] uppercase tracking-[0.25em] text-taupe-dark font-medium">
-              Aesthetics
-            </span>
+          <Link href="/" className="flex items-center gap-3">
+            <Image
+              src="/images/logo.png"
+              alt="Clearskin & Wellness Aesthetics"
+              width={48}
+              height={48}
+              className="w-11 h-11 md:w-12 md:h-12"
+              priority
+            />
+            <div className="flex flex-col">
+              <span className="font-[family-name:var(--font-heading)] text-xl md:text-[1.45rem] font-semibold text-charcoal tracking-wide leading-tight">
+                Clearskin & Wellness
+              </span>
+              <span className="text-[0.6rem] uppercase tracking-[0.25em] text-taupe-dark font-medium">
+                Aesthetics
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Nav */}

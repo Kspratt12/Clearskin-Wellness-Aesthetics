@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Phone,
   Mail,
@@ -362,25 +363,37 @@ export default function ContactPage() {
             description="Conveniently located on Fayetteville Road in Durham, NC. Ample parking available."
           />
           <FadeIn>
-            <div className="bg-sand-light border border-sand aspect-[16/7] flex items-center justify-center">
-              <div className="text-center px-6">
-                <MapPin
-                  size={32}
-                  className="mx-auto mb-3 text-taupe-dark"
-                  strokeWidth={1.5}
+            <div className="relative">
+              <div className="relative aspect-[16/7] overflow-hidden bg-sand-light">
+                <Image
+                  src="/images/clinic/building.png"
+                  alt="Clearskin & Wellness Aesthetics building exterior"
+                  fill
+                  className="object-cover"
+                  sizes="100vw"
                 />
-                <p className="text-sm text-charcoal-muted mb-1">
-                  6216 Fayetteville Rd, Suite #102, Durham, NC 27713
-                </p>
-                <a
-                  href="https://maps.google.com/?q=6216+Fayetteville+Rd+Suite+102+Durham+NC+27713"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-xs text-champagne-dark hover:text-champagne transition-colors mt-2"
-                >
-                  Open in Google Maps
-                  <ExternalLink size={10} />
-                </a>
+                <div className="absolute inset-0 bg-charcoal/30" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center px-6">
+                    <MapPin
+                      size={32}
+                      className="mx-auto mb-3 text-warm-white"
+                      strokeWidth={1.5}
+                    />
+                    <p className="text-sm text-warm-white mb-1 font-medium">
+                      6216 Fayetteville Rd, Suite #102, Durham, NC 27713
+                    </p>
+                    <a
+                      href="https://maps.google.com/?q=6216+Fayetteville+Rd+Suite+102+Durham+NC+27713"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-xs text-champagne-light hover:text-champagne transition-colors mt-2"
+                    >
+                      Open in Google Maps
+                      <ExternalLink size={10} />
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </FadeIn>

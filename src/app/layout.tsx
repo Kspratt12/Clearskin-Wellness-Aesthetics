@@ -7,6 +7,13 @@ export const metadata: Metadata = {
   title: "Clearskin & Wellness Aesthetics | Premium Cosmetic & Skin Wellness",
   description:
     "Clearskin & Wellness Aesthetics is Durham's premier cosmetic and skin wellness destination, backed by the medical expertise of North Carolina Center for Dermatology.",
+  icons: {
+    icon: [
+      { url: "/favicon-16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+  },
 };
 
 export default function RootLayout({

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   Phone,
   Mail,
@@ -70,12 +71,23 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand Column */}
           <div className="lg:col-span-1">
-            <h4 className="font-[family-name:var(--font-heading)] text-2xl font-semibold mb-1">
-              Clearskin & Wellness
-            </h4>
-            <p className="text-[0.65rem] uppercase tracking-[0.25em] text-taupe mb-5">
+            <div className="flex items-center gap-3 mb-4">
+              <Image
+                src="/images/logo.png"
+                alt="CWA Logo"
+                width={44}
+                height={44}
+                className="brightness-0 invert opacity-90"
+              />
+              <div>
+                <h4 className="font-[family-name:var(--font-heading)] text-xl font-semibold leading-tight">
+                  Clearskin & Wellness
+                </h4>
+                <p className="text-[0.6rem] uppercase tracking-[0.25em] text-taupe">
               Aesthetics
-            </p>
+                </p>
+              </div>
+            </div>
             <p className="text-sm text-taupe-light leading-relaxed mb-6">
               Durham&apos;s premier cosmetic and skin wellness destination,
               backed by the medical expertise of North Carolina Center for
