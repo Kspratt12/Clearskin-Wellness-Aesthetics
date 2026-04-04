@@ -40,6 +40,7 @@ const featuredTreatments = [
     description:
       "Tighten, firm, and rejuvenate skin with this advanced combination of microneedling and radiofrequency energy.",
     image: "Morpheus8 device treatment on face",
+    photo: "/images/services/morpheus8.png",
   },
   {
     title: "PicoSure Pro",

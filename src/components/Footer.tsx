@@ -73,11 +73,11 @@ export function Footer() {
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-4">
               <Image
-                src="/images/logo.png"
+                src="/images/logo-transparent.png"
                 alt="CWA Logo"
                 width={44}
                 height={44}
-                className="opacity-90 mix-blend-screen"
+                className="opacity-90"
                 unoptimized
               />
               <div>

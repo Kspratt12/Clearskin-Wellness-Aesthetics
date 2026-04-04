@@ -42,6 +42,7 @@ const advancedTreatments: Service[] = [
     description:
       "Combine microneedling with radiofrequency energy to stimulate deep collagen remodeling. Morpheus8 tightens skin, improves texture, and refines contours on both face and body. Multiple sessions may be recommended for optimal results.",
     image: "Morpheus8 treatment session",
+    photo: "/images/services/morpheus8.png",
   },
   {
     name: "PicoSure Pro",
@@ -57,6 +58,7 @@ const advancedTreatments: Service[] = [
     description:
       "Precisely targeted laser energy breaks down tattoo ink into tiny particles that your body naturally eliminates. The number of sessions depends on ink type, tattoo size, placement, and individual factors.",
     image: "Laser tattoo removal session",
+    photo: "/images/services/picosure-tattoo-removal.png",
   },
   {
     name: "Laser Hair Removal",

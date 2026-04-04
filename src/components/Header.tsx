@@ -80,7 +80,7 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
             <Image
-              src="/images/logo.png"
+              src="/images/logo-transparent.png"
               alt="Clearskin & Wellness Aesthetics"
               width={48}
               height={48}
