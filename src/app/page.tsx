@@ -686,6 +686,45 @@ export default function HomePage() {
               { src: "/images/videos/reel-2.mp4", label: "Results in Motion" },
               { src: "/images/videos/reel-3.mp4", label: "Behind the Treatment" },
               { src: "/images/videos/reel-4.mp4", label: "Patient Experience" },
+            ].map((video, i) => (
+              <FadeIn key={video.src} delay={i * 0.1}>
+                <div className="group">
+                  <div className="relative aspect-[9/16] max-h-[70vh] sm:max-h-none overflow-hidden bg-charcoal rounded-sm mx-auto max-w-[280px] sm:max-w-none">
+                    <video
+                      src={video.src}
+                      playsInline
+                      muted
+                      loop
+                      autoPlay
+                      preload="auto"
+                      className="w-full h-full object-cover cursor-pointer"
+                      onClick={(e) => {
+                        const v = e.currentTarget;
+                        if (v.paused) { v.play(); } else { v.pause(); }
+                        v.muted = !v.muted;
+                      }}
+                    >
+                      Your browser does not support the video tag.
+                    </video>
+                    <div className="absolute bottom-3 right-3 bg-charcoal/60 backdrop-blur-sm text-warm-white p-2 rounded-full pointer-events-none">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                        <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+                      </svg>
+                    </div>
+                  </div>
+                  <p className="text-sm text-charcoal mt-3 font-medium">
+                    {video.label}
+                  </p>
+                  <p className="text-xs text-charcoal-muted mt-0.5">
+                    Tap to unmute
+                  </p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6 max-w-5xl mx-auto">
+            {[
               { src: "/images/videos/tiktok-2.mp4", label: "Treatment Day" },
               { src: "/images/videos/tiktok-3.mp4", label: "Skin Transformation" },
               { src: "/images/videos/tiktok-4.mp4", label: "Expert Care" },
