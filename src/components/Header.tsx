@@ -86,7 +86,7 @@ export function Header() {
               height={48}
               className="w-11 h-11 md:w-12 md:h-12"
               priority
-              unoptimized
+              quality={90}
             />
             <div className="flex flex-col">
               <span className="font-[family-name:var(--font-heading)] text-xl md:text-[1.45rem] font-semibold text-charcoal tracking-wide leading-tight">

@@ -85,7 +85,7 @@ export function Footer() {
                 width={44}
                 height={44}
                 className="opacity-90"
-                unoptimized
+                quality={90}
               />
               <div>
                 <h4 className="font-[family-name:var(--font-heading)] text-xl font-semibold leading-tight">

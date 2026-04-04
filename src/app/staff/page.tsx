@@ -144,7 +144,7 @@ export default function StaffPage() {
             className="object-cover object-center"
             sizes="100vw"
             priority
-            quality={100}
+            quality={90}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-charcoal/20 to-transparent" />
           <div className="absolute inset-0 flex items-end">
@@ -191,7 +191,7 @@ export default function StaffPage() {
                         fill
                         className="object-cover object-top"
                         sizes="(max-width: 1024px) 100vw, 50vw"
-                        quality={100}
+                        quality={90}
                       />
                     </div>
                   </div>
@@ -291,7 +291,7 @@ export default function StaffPage() {
                       fill
                       className="object-cover object-top"
                       sizes="(max-width: 640px) 100vw, 50vw"
-                      quality={100}
+                      quality={90}
                     />
                   </div>
                   <h3 className="font-[family-name:var(--font-heading)] text-xl font-medium text-charcoal">

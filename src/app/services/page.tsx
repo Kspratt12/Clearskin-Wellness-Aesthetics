@@ -196,7 +196,7 @@ function ServiceCard({ service }: { service: Service }) {
             fill
             className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
             sizes="(max-width: 768px) 100vw, 50vw"
-            quality={100}
+            quality={90}
           />
         </div>
       ) : (
@@ -307,7 +307,7 @@ export default function ServicesPage() {
             fill
             className="object-cover object-center"
             sizes="100vw"
-            quality={100}
+            quality={90}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-charcoal/40 to-transparent" />
           <div className="absolute inset-0 flex items-center">

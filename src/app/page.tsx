@@ -314,7 +314,7 @@ export default function HomePage() {
                   className="object-cover object-center"
                   sizes="(max-width: 1024px) 100vw, 55vw"
                   priority={i === 0}
-                  quality={100}
+                  quality={90}
                 />
               </motion.div>
             ))}
@@ -410,7 +410,7 @@ export default function HomePage() {
                         fill
                         className="object-cover object-center group-hover:scale-[1.04] transition-transform duration-[800ms] ease-out"
                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                        quality={100}
+                        quality={90}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-charcoal/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     </div>
@@ -546,7 +546,7 @@ export default function HomePage() {
                       fill
                       className="object-cover group-hover:scale-[1.03] transition-transform duration-700"
                       sizes="(max-width: 640px) 50vw, 25vw"
-                      quality={100}
+                      quality={90}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-charcoal/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   </div>
@@ -696,7 +696,7 @@ export default function HomePage() {
                       muted
                       loop
                       autoPlay
-                      preload="auto"
+                      preload="none"
                       className="w-full h-full object-cover cursor-pointer"
                       onClick={(e) => {
                         const v = e.currentTarget;
@@ -738,7 +738,7 @@ export default function HomePage() {
                       muted
                       loop
                       autoPlay
-                      preload="auto"
+                      preload="none"
                       className="w-full h-full object-cover cursor-pointer"
                       onClick={(e) => {
                         const v = e.currentTarget;
@@ -988,7 +988,7 @@ export default function HomePage() {
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 50vw"
-                    quality={100}
+                    quality={90}
                   />
                 </div>
                 {/* Credential badge overlay */}
@@ -1077,7 +1077,7 @@ export default function HomePage() {
                       fill
                       className="object-cover object-top group-hover:scale-[1.03] transition-transform duration-700"
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                      quality={100}
+                      quality={90}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-charcoal/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   </div>
