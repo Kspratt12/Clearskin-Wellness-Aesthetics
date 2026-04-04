@@ -25,13 +25,13 @@ const quickLinks = [
 ];
 
 const services = [
-  "Neuromodulators",
-  "Dermal Fillers",
-  "Morpheus8",
-  "PicoSure Pro",
-  "Laser Hair Removal",
-  "Medical Microneedling",
-  "Facials & Peels",
+  { name: "Neuromodulators", href: "/services#injectables" },
+  { name: "Dermal Fillers", href: "/services#injectables" },
+  { name: "Morpheus8", href: "/services#advanced" },
+  { name: "PicoSure Pro", href: "/services#advanced" },
+  { name: "Laser Hair Removal", href: "/services#advanced" },
+  { name: "Medical Microneedling", href: "/services#rejuvenation" },
+  { name: "Facials & Peels", href: "/services#facials" },
 ];
 
 export function Footer() {
@@ -166,12 +166,12 @@ export function Footer() {
             </h5>
             <ul className="space-y-3">
               {services.map((service) => (
-                <li key={service}>
+                <li key={service.name}>
                   <Link
-                    href="/services"
+                    href={service.href}
                     className="text-sm text-taupe-light hover:text-warm-white transition-colors"
                   >
-                    {service}
+                    {service.name}
                   </Link>
                 </li>
               ))}

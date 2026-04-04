@@ -950,72 +950,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ========== MEMBERSHIP TEASER ========== */}
-      <section className="py-20 md:py-28 bg-charcoal text-warm-white">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <FadeIn direction="left">
-              <div>
-                <span className="text-xs uppercase tracking-[0.25em] text-champagne font-medium">
-                  Membership
-                </span>
-                <h2 className="font-[family-name:var(--font-heading)] text-3xl md:text-4xl font-light mt-3 mb-6 leading-tight">
-                  Invest in Your Skin,
-                  <br />
-                  <span className="italic">Every Month</span>
-                </h2>
-                <p className="text-taupe-light leading-relaxed mb-5">
-                  Our membership plans make premium skincare accessible and
-                  consistent. Choose a tier that fits your goals and enjoy
-                  monthly treatments, exclusive member pricing, and ongoing
-                  savings on everything from facials to injectables.
-                </p>
-                <p className="text-taupe-light leading-relaxed mb-8">
-                  Plans start at just $85/month with complimentary services
-                  that roll over month to month within the first year.
-                </p>
 
-                <div className="grid grid-cols-2 gap-4 mb-8">
-                  {["Bronze", "Silver", "Gold", "Platinum"].map((tier) => (
-                    <div
-                      key={tier}
-                      className="border border-warm-white/15 px-4 py-3 text-center"
-                    >
-                      <span className="text-xs uppercase tracking-[0.2em] text-champagne">
-                        {tier}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-
-                <Link
-                  href="/membership"
-                  className="inline-flex items-center bg-champagne text-charcoal px-8 py-3.5 text-sm tracking-wider font-medium hover:bg-champagne-light transition-all duration-300 group"
-                >
-                  View Membership Plans
-                  <ArrowRight
-                    size={15}
-                    className="ml-2 group-hover:translate-x-1 transition-transform"
-                  />
-                </Link>
-              </div>
-            </FadeIn>
-
-            <FadeIn direction="right">
-              <div className="aspect-[4/3] relative w-full overflow-hidden bg-sand-light">
-                <Image
-                  src="/images/clinic/treatment-room.png"
-                  alt="Clearskin & Wellness Aesthetics treatment room"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  quality={100}
-                />
-              </div>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
 
       {/* ========== CONFIDENCE / REASSURANCE ========== */}
       <section className="py-20 md:py-28 bg-cream">
@@ -1071,40 +1006,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ========== BOOKING CTA STRIP ========== */}
-      <section className="relative py-20 md:py-24 bg-sand-light">
-        <div className="max-w-4xl mx-auto px-6 text-center">
-          <FadeIn>
-            <h2 className="font-[family-name:var(--font-heading)] text-3xl md:text-4xl font-light text-charcoal mb-4">
-              Start Your Skin Journey Today
-            </h2>
-            <p className="text-charcoal-muted mb-8 max-w-xl mx-auto">
-              All cosmetic procedures begin with a personalized consultation.
-              Let us help you take the first step toward your skin goals.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a
-                href="https://nccdermatology.myaestheticrecord.com/online-booking/book-appointment"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center bg-charcoal text-warm-white px-8 py-3.5 text-sm tracking-wider hover:bg-charcoal-light transition-all duration-300 group"
-              >
-                Book Your Appointment
-                <ArrowRight
-                  size={15}
-                  className="ml-2 group-hover:translate-x-1 transition-transform"
-                />
-              </a>
-              <a
-                href="tel:+19195891307"
-                className="inline-flex items-center border border-charcoal/20 text-charcoal px-8 py-3.5 text-sm tracking-wider hover:border-charcoal/40 transition-all duration-300"
-              >
-                Call (919) 589-1307
-              </a>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
     </>
   );
 }
