@@ -223,7 +223,7 @@ export function Footer() {
                   className="flex items-center gap-3 text-sm text-taupe-light hover:text-warm-white transition-colors"
                 >
                   <Mail size={16} className="shrink-0" />
-                  clearskinwellnessaesthetics@gmail.com
+                  <span className="break-all">clearskinwellnessaesthetics@gmail.com</span>
                 </a>
               </li>
             </ul>
