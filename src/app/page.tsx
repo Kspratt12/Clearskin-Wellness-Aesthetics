@@ -195,9 +195,9 @@ export default function HomePage() {
                 transition={{ duration: 0.7, delay: 0.2 }}
                 className="font-[family-name:var(--font-heading)] text-[2.5rem] md:text-5xl lg:text-[3.25rem] xl:text-[3.75rem] font-light text-charcoal leading-[1.06] mb-8"
               >
-                Precision Aesthetics,
+                The Skin You Want.
                 <br />
-                <span className="italic">Dermatology Authority</span>
+                <span className="italic">The Experts You Trust.</span>
               </motion.h1>
 
               <motion.p
@@ -206,9 +206,9 @@ export default function HomePage() {
                 transition={{ duration: 0.6, delay: 0.35 }}
                 className="text-charcoal-muted leading-[1.85] mb-5 text-[0.9rem] max-w-[420px]"
               >
-                Board-certified dermatology meets advanced cosmetic treatment.
+                Cosmetic treatments guided by board-certified dermatology.
                 Every protocol is clinical. Every provider is licensed.
-                Every outcome is measurable.
+                Every result is earned, not promised.
               </motion.p>
 
               {/* Trust Signals */}
@@ -259,14 +259,22 @@ export default function HomePage() {
               </motion.div>
 
               {/* Micro-credential */}
-              <motion.p
+              <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.7 }}
-                className="text-[0.65rem] text-taupe tracking-wide mt-8"
+                className="mt-9 pt-6 border-t border-sand/60"
               >
-                Led by Dr. Jeffrey Scales, MD &middot; Board-Certified Dermatologist
-              </motion.p>
+                <p className="text-[0.65rem] text-taupe-dark tracking-[0.12em] uppercase">
+                  Medical Director
+                </p>
+                <p className="text-[0.8rem] text-charcoal font-medium mt-1">
+                  Dr. Jeffrey Scales, MD
+                </p>
+                <p className="text-[0.65rem] text-taupe tracking-wide mt-0.5">
+                  Board-Certified Dermatologist &middot; Penn Med &middot; Wake Forest
+                </p>
+              </motion.div>
             </div>
           </div>
 
