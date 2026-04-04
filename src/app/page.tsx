@@ -686,7 +686,6 @@ export default function HomePage() {
               { src: "/images/videos/reel-2.mp4", label: "Results in Motion" },
               { src: "/images/videos/reel-3.mp4", label: "Behind the Treatment" },
               { src: "/images/videos/reel-4.mp4", label: "Patient Experience" },
-              { src: "/images/videos/tiktok-1.mp4", label: "Quick Tips" },
               { src: "/images/videos/tiktok-2.mp4", label: "Treatment Day" },
               { src: "/images/videos/tiktok-3.mp4", label: "Skin Transformation" },
               { src: "/images/videos/tiktok-4.mp4", label: "Expert Care" },
