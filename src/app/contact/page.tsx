@@ -116,11 +116,11 @@ export default function ContactPage() {
                       <span>(919) 589-1307</span>
                     </a>
                     <a
-                      href="mailto:nccd14@gmail.com"
+                      href="mailto:clearskinwellnessaesthetics@gmail.com"
                       className="flex items-center gap-3 text-charcoal hover:text-champagne-dark transition-colors"
                     >
                       <Mail size={16} className="shrink-0 text-taupe-dark" />
-                      <span>nccd14@gmail.com</span>
+                      <span>clearskinwellnessaesthetics@gmail.com</span>
                     </a>
                   </div>
 

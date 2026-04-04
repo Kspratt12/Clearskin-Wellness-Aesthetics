@@ -219,11 +219,11 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:nccd14@gmail.com"
+                  href="mailto:clearskinwellnessaesthetics@gmail.com"
                   className="flex items-center gap-3 text-sm text-taupe-light hover:text-warm-white transition-colors"
                 >
                   <Mail size={16} className="shrink-0" />
-                  nccd14@gmail.com
+                  clearskinwellnessaesthetics@gmail.com
                 </a>
               </li>
             </ul>
