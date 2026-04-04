@@ -331,8 +331,28 @@ export default function HomePage() {
                 alt: "Scalp and hair treatment results — before and after",
                 label: "Scalp & Hair Restoration",
               },
+              {
+                src: "/images/results/before-after-5.png",
+                alt: "Tattoo removal results — before and after",
+                label: "PicoSure Pro Tattoo Removal",
+              },
+              {
+                src: "/images/results/before-after-6.png",
+                alt: "Forehead acne treatment results — before and after",
+                label: "Acne & Skin Smoothing",
+              },
+              {
+                src: "/images/results/before-after-7.png",
+                alt: "Scalp lesion removal results — before and after",
+                label: "DPN Mole Removal",
+              },
+              {
+                src: "/images/results/before-after-8.png",
+                alt: "Dermal filler results — before and after",
+                label: "Dermal Filler Enhancement",
+              },
             ].map((result, i) => (
-              <FadeIn key={result.src} delay={i * 0.1}>
+              <FadeIn key={result.src} delay={i * 0.06}>
                 <div className="group">
                   <div className="relative aspect-square overflow-hidden bg-sand-light">
                     <Image
@@ -340,7 +360,7 @@ export default function HomePage() {
                       alt={result.alt}
                       fill
                       className="object-cover group-hover:scale-[1.02] transition-transform duration-700"
-                      sizes="(max-width: 768px) 100vw, 33vw"
+                      sizes="(max-width: 640px) 50vw, 25vw"
                     />
                   </div>
                   <p className="text-sm text-charcoal mt-3 font-medium">
