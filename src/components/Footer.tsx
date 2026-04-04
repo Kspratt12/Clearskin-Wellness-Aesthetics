@@ -48,11 +48,11 @@ export function Footer() {
             <div className="premium-rule" />
           </div>
           <h3 className="font-[family-name:var(--font-heading)] text-3xl md:text-4xl font-light text-warm-white mb-4">
-            Your Best Skin Is One Consultation Away
+            Your Best Skin Starts with One Visit
           </h3>
           <p className="text-taupe-light text-sm max-w-lg mx-auto mb-10 leading-relaxed">
-            Every journey begins with a personalized consultation. Our team
-            will build a plan around your goals, your skin, and your timeline.
+            Walk in with questions. Walk out with a clinical plan built around
+            your skin, your goals, and your timeline. No pressure, ever.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a

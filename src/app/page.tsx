@@ -112,24 +112,28 @@ const providerPreview = [
     name: "Dr. Jeffrey Scales",
     title: "MD, Medical Director",
     credential: "Board-Certified Dermatologist",
+    personality: "The clinical mind behind every protocol. Penn Med-trained, Wake Forest residency. He doesn't do trendy — he does what works.",
     image: "/images/team/jeffery-scales.png",
   },
   {
     name: "Anay Castro",
     title: "MPAS, PA-C",
     credential: "Dermatology PA & Aesthetic Injector",
+    personality: "Your go-to for natural-looking injectables. Bilingual, detail-obsessed, and trained to balance artistry with anatomy.",
     image: "/images/team/anay-castro.png",
   },
   {
     name: "Cecilia Salazar",
     title: "Aesthetic RN",
     credential: "17+ Years in Medical Aesthetics",
+    personality: "The laser and skin rejuvenation specialist patients ask for by name. 17 years of precision. Bilingual care.",
     image: "/images/team/cecilia-salazar.png",
   },
   {
     name: "Aaron Pankey",
     title: "Licensed Esthetician",
     credential: "Specialized in Melanated Skin",
+    personality: "Aveda-trained with a gift for melanin-rich skin. He educates as he treats — you'll leave knowing your skin better.",
     image: "/images/team/aaron-pankey.png",
   },
 ];
@@ -185,7 +189,7 @@ export default function HomePage() {
               >
                 <div className="w-8 h-px bg-champagne-dark" />
                 <span className="text-[0.65rem] uppercase tracking-[0.4em] text-champagne-dark font-medium">
-                  Durham, NC
+                  Durham, NC &middot; Est. 2021
                 </span>
               </motion.div>
 
@@ -195,9 +199,9 @@ export default function HomePage() {
                 transition={{ duration: 0.7, delay: 0.2 }}
                 className="font-[family-name:var(--font-heading)] text-[2.5rem] md:text-5xl lg:text-[3.25rem] xl:text-[3.75rem] font-light text-charcoal leading-[1.06] mb-8"
               >
-                Clinical Precision.
+                Your Skin Deserves
                 <br />
-                <span className="italic">Visible Results.</span>
+                <span className="italic">a Dermatologist&apos;s Touch.</span>
               </motion.h1>
 
               <motion.p
@@ -206,9 +210,10 @@ export default function HomePage() {
                 transition={{ duration: 0.6, delay: 0.35 }}
                 className="text-charcoal-muted leading-[1.85] mb-5 text-[0.9rem] max-w-[420px]"
               >
-                Advanced aesthetics under board-certified dermatology
-                oversight. Licensed providers. Medical-grade protocols.
-                Outcomes you can see.
+                Durham&apos;s only aesthetics practice built inside a
+                dermatology office. Every injectable, laser, and facial is
+                overseen by a board-certified dermatologist &mdash; not a
+                med spa with a medical label.
               </motion.p>
 
               {/* Trust Signals */}
@@ -222,10 +227,10 @@ export default function HomePage() {
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} size={9} className="fill-champagne text-champagne" />
                   ))}
-                  <span className="text-[0.68rem] text-taupe-dark ml-1">5.0</span>
+                  <span className="text-[0.68rem] text-taupe-dark ml-1">5.0 on Google</span>
                 </div>
                 <div className="w-px h-3 bg-sand/80" />
-                <span className="text-[0.68rem] text-taupe-dark tracking-wide">Dermatology-Backed Practice</span>
+                <span className="text-[0.68rem] text-taupe-dark tracking-wide">Trusted by 1,000+ Triangle Patients</span>
               </motion.div>
 
               {/* CTAs */}
@@ -241,7 +246,7 @@ export default function HomePage() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center bg-charcoal text-warm-white px-9 py-[15px] text-[0.78rem] tracking-[0.18em] uppercase font-medium hover:bg-charcoal-light transition-all duration-300 group"
                 >
-                  Schedule Consultation
+                  Book Your Consultation
                   <ArrowRight
                     size={14}
                     className="ml-2.5 group-hover:translate-x-1 transition-transform"
@@ -254,6 +259,15 @@ export default function HomePage() {
                   Explore Services
                 </Link>
               </motion.div>
+
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.4, delay: 0.65 }}
+                className="text-[0.68rem] text-taupe-dark mt-4 tracking-wide"
+              >
+                Online booking takes less than 30 seconds
+              </motion.p>
 
               {/* Micro-credential */}
               <motion.div
@@ -350,19 +364,44 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ========== SOCIAL PROOF STATS ========== */}
+      <section className="py-14 md:py-16 bg-warm-white border-y border-sand/40">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 text-center">
+            {[
+              { value: "1,000+", label: "Patients Treated" },
+              { value: "5.0", label: "Google Rating" },
+              { value: "4", label: "Licensed Specialists" },
+              { value: "Durham, NC", label: "Serving the Triangle" },
+            ].map((stat) => (
+              <FadeIn key={stat.label} direction="up">
+                <div>
+                  <p className="font-[family-name:var(--font-heading)] text-3xl md:text-4xl font-light text-charcoal">
+                    {stat.value}
+                  </p>
+                  <p className="text-xs text-charcoal-muted tracking-[0.15em] uppercase mt-2">
+                    {stat.label}
+                  </p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ========== FEATURED TREATMENTS ========== */}
       <section className="py-24 md:py-32 bg-ivory">
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading
             eyebrow="Signature Treatments"
-            title="Clinical-Grade. Provider-Led."
-            description="Every treatment on this page is selected, performed, and overseen by dermatology-trained specialists."
+            title="What We Do Best"
+            description="Selected by dermatologists. Performed by licensed specialists. Every protocol is medical-grade — not cosmetic guesswork."
           />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
             {featuredTreatments.map((treatment, i) => (
               <FadeIn key={treatment.title} delay={i * 0.08}>
-                <Link href={treatment.href} className="block group bg-warm-white border border-sand/40 hover:border-champagne/20 transition-all duration-600 hover:shadow-[0_16px_48px_rgba(0,0,0,0.06)]">
+                <Link href={treatment.href} className="block group bg-warm-white border border-sand/40 hover:border-champagne/30 transition-all duration-600 hover:shadow-[0_20px_60px_rgba(212,175,55,0.08)]">
                   {treatment.photo ? (
                     <div className="relative aspect-[3/2] overflow-hidden bg-sand-light">
                       <Image
@@ -397,8 +436,8 @@ export default function HomePage() {
                       {treatment.description}
                     </p>
                     <span className="inline-flex items-center text-xs text-champagne-dark tracking-[0.1em] uppercase group-hover:text-charcoal transition-colors duration-300">
-                      Learn More
-                      <ArrowRight size={12} className="ml-1.5 group-hover:translate-x-1 transition-transform" />
+                      View Details & Book
+                      <ArrowRight size={12} className="ml-1.5 group-hover:translate-x-1.5 transition-transform duration-300" />
                     </span>
                   </div>
                 </Link>
@@ -428,8 +467,8 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading
             eyebrow="Proven Results"
-            title="Outcomes, Not Promises"
-            description="Real patients. Real protocols. Unretouched photos from our clinical team."
+            title="See What's Possible"
+            description="Unretouched before-and-after photos from real patients treated right here in Durham. Every result backed by a clinical protocol."
           />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -438,46 +477,64 @@ export default function HomePage() {
                 src: "/images/results/before-after-1.png",
                 alt: "Acne treatment results, before and after",
                 label: "Acne & Texture Improvement",
+                detail: "Medical-grade peel series + SkinPen",
+                provider: "Cecilia S., RN",
               },
               {
                 src: "/images/results/before-after-2.png",
                 alt: "Pigmentation correction results, before and after",
                 label: "Pigmentation Correction",
+                detail: "PicoSure Pro laser, 3 sessions",
+                provider: "Cecilia S., RN",
               },
               {
                 src: "/images/results/before-after-3.png",
                 alt: "Acne clearance results, before and after",
                 label: "Acne Clearance & Skin Clarity",
+                detail: "Clinical facial protocol + home regimen",
+                provider: "Aaron P., LE",
               },
               {
                 src: "/images/results/before-after-4.png",
                 alt: "Scalp and hair treatment results, before and after",
                 label: "Scalp & Hair Restoration",
+                detail: "PRP hair treatment, 4 sessions",
+                provider: "Anay C., PA-C",
               },
               {
                 src: "/images/results/before-after-5.png",
                 alt: "Tattoo removal results, before and after",
                 label: "PicoSure Pro Tattoo Removal",
+                detail: "Picosecond laser, progressive fading",
+                provider: "Cecilia S., RN",
               },
               {
                 src: "/images/results/before-after-6.png",
                 alt: "Forehead acne treatment results, before and after",
                 label: "Acne & Skin Smoothing",
+                detail: "Customized facial + medical extractions",
+                provider: "Aaron P., LE",
               },
               {
                 src: "/images/results/before-after-7.png",
                 alt: "Scalp lesion removal results, before and after",
                 label: "DPN Mole Removal",
+                detail: "Precision removal under derm oversight",
+                provider: "Dr. Scales, MD",
               },
               {
                 src: "/images/results/before-after-8.png",
                 alt: "Dermal filler results, before and after",
                 label: "Dermal Filler Enhancement",
+                detail: "HA filler, lip and cheek contouring",
+                provider: "Anay C., PA-C",
               },
               {
                 src: "/images/results/before-after-9.png",
                 alt: "Pore refinement and skin texture results, before and after",
                 label: "Pore Refinement & Skin Texture",
+                detail: "Morpheus8, single session",
+                provider: "Cecilia S., RN",
               },
             ].map((result, i) => (
               <FadeIn key={result.src} delay={i * 0.06}>
@@ -487,13 +544,20 @@ export default function HomePage() {
                       src={result.src}
                       alt={result.alt}
                       fill
-                      className="object-cover group-hover:scale-[1.02] transition-transform duration-700"
+                      className="object-cover group-hover:scale-[1.03] transition-transform duration-700"
                       sizes="(max-width: 640px) 50vw, 25vw"
                       quality={100}
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-charcoal/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   </div>
                   <p className="text-sm text-charcoal mt-3 font-medium">
                     {result.label}
+                  </p>
+                  <p className="text-xs text-charcoal-muted mt-1">
+                    {result.detail}
+                  </p>
+                  <p className="text-[0.65rem] text-champagne-dark mt-0.5">
+                    Provider: {result.provider}
                   </p>
                 </div>
               </FadeIn>
@@ -741,7 +805,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading
             eyebrow="5-Star Reviews"
-            title="In Their Own Words"
+            title="What Our Patients Say"
             description="Unedited Google reviews from real patients. We didn't write these. They did."
           />
 
@@ -771,72 +835,76 @@ export default function HomePage() {
               {
                 name: "Aleyah P.",
                 review:
-                  "I received my first lymphatic drainage facial and it was an amazing experience. The office is bright and clean with beautiful artwork on the walls. Aaron was wonderful, very knowledgeable about the products and explained every step.",
+                  "I received my first lymphatic drainage facial and it was <strong>an amazing experience</strong>. The office is bright and clean with beautiful artwork on the walls. Aaron was wonderful, <strong>very knowledgeable about the products</strong> and explained every step.",
                 service: "Lymphatic Drainage Facial",
               },
               {
                 name: "Kyarra R.",
                 review:
-                  "I absolutely love this place! Reena is incredibly knowledgeable about skin and takes the time to explain everything in detail. It's so refreshing, and honestly rare, to find a skincare center that truly understands and caters to the unique needs of diverse skin types.",
+                  "I absolutely love this place! Reena is <strong>incredibly knowledgeable about skin</strong> and takes the time to explain everything in detail. It's so refreshing, and honestly rare, to find a skincare center that <strong>truly understands and caters to the unique needs of diverse skin types</strong>.",
                 service: "Skincare Consultation",
               },
               {
                 name: "Brooklynn C.",
                 review:
-                  "I have been getting laser hair removal from Cecilia for about 5 months and I've had a great experience. I was hesitant at first, but Cecilia's care, along with Dr. Scales' guidance, has made such a positive difference.",
+                  "I have been getting laser hair removal from Cecilia for about 5 months and I've had <strong>a great experience</strong>. I was hesitant at first, but <strong>Cecilia's care, along with Dr. Scales' guidance, has made such a positive difference</strong>.",
                 service: "Laser Hair Removal",
               },
               {
                 name: "Allison M.",
                 review:
-                  "I've been a client for about two years, undergoing laser hair removal and facial cleansing treatments. Cecilia is incredibly patient and caring, making sure I feel comfortable and at ease throughout my visits. I highly recommend her services!",
+                  "I've been a client for about <strong>two years</strong>, undergoing laser hair removal and facial cleansing treatments. Cecilia is <strong>incredibly patient and caring</strong>, making sure I feel comfortable and at ease throughout my visits. I highly recommend her services!",
                 service: "Laser Hair Removal & Facials",
               },
               {
                 name: "Giavanni P.",
                 review:
-                  "I received an hour long facial from Aaron and it was amazing! I learned so much and left feeling super moisturized and relaxed! Very professional staff and a lovely, welcoming environment.",
+                  "I received an hour long facial from Aaron and <strong>it was amazing!</strong> I learned so much and left feeling <strong>super moisturized and relaxed!</strong> Very professional staff and a lovely, welcoming environment.",
                 service: "60-Minute Facial",
               },
               {
                 name: "Alexandra K.",
                 review:
-                  "Cecilia and the staff were warm, welcoming, and knowledgeable. I enjoyed every minute of the facial. The place is clean, beautiful, and peaceful. They use high-quality products. Cecilia was gentle with my sensitive skin and used tools based on my needs.",
+                  "Cecilia and the staff were <strong>warm, welcoming, and knowledgeable</strong>. I enjoyed every minute of the facial. The place is clean, beautiful, and peaceful. <strong>They use high-quality products.</strong> Cecilia was gentle with my sensitive skin and used tools based on my needs.",
                 service: "50-Minute Facial",
               },
               {
                 name: "Katie W.",
                 review:
-                  "I'm halfway through my first-ever laser hair removal treatments with Cecilia and it has been an excellent experience! The space is so nice and clean and you can tell she is extremely knowledgeable about skin care and each laser they offer.",
+                  "I'm halfway through my first-ever laser hair removal treatments with Cecilia and <strong>it has been an excellent experience!</strong> The space is so nice and clean and you can tell she is <strong>extremely knowledgeable about skin care</strong> and each laser they offer.",
                 service: "Laser Hair Removal",
               },
               {
                 name: "Demarcus N.",
                 review:
-                  "My wife treated me to my first experience at this business, and I've been back several times. The Ultimate Double Cleanse facial was amazing. As a male, I felt completely comfortable during the whole process!",
+                  "My wife treated me to my first experience at this business, and <strong>I've been back several times</strong>. The Ultimate Double Cleanse facial was amazing. As a male, <strong>I felt completely comfortable</strong> during the whole process!",
                 service: "Ultimate Double Cleanse Facial",
               },
               {
                 name: "Heroina S.",
                 review:
-                  "I am very happy with the results of my face. I love coming to this place and relaxing. Cecilia has a phenomenal hand for skin care. I give her a 10/10. When you go, ask for Cecilia I. Salazar, Nurse Injector and Laser Specialist.",
+                  "I am <strong>very happy with the results</strong> of my face. I love coming to this place and relaxing. <strong>Cecilia has a phenomenal hand for skin care. I give her a 10/10.</strong> When you go, ask for Cecilia I. Salazar, Nurse Injector and Laser Specialist.",
                 service: "Facial Treatment",
               },
             ].map((testimonial, i) => (
               <FadeIn key={testimonial.name} delay={i * 0.06}>
-                <div className="bg-warm-white border border-sand/60 p-6 md:p-8 h-full flex flex-col hover:shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-shadow duration-500">
-                  <div className="flex items-center gap-1 mb-4">
-                    {[...Array(5)].map((_, j) => (
-                      <Star
-                        key={j}
-                        size={14}
-                        className="fill-champagne text-champagne"
-                      />
-                    ))}
+                <div className="bg-warm-white border border-sand/60 p-6 md:p-8 h-full flex flex-col hover:shadow-[0_12px_40px_rgba(212,175,55,0.06)] hover:border-champagne/20 transition-all duration-500">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center gap-1">
+                      {[...Array(5)].map((_, j) => (
+                        <Star
+                          key={j}
+                          size={14}
+                          className="fill-champagne text-champagne"
+                        />
+                      ))}
+                    </div>
+                    <span className="font-[family-name:var(--font-heading)] text-3xl text-champagne/20 leading-none select-none">&ldquo;</span>
                   </div>
-                  <p className="text-sm text-charcoal-muted leading-relaxed flex-1 mb-5">
-                    &ldquo;{testimonial.review}&rdquo;
-                  </p>
+                  <p
+                    className="text-sm text-charcoal-muted leading-relaxed flex-1 mb-5 [&_strong]:text-charcoal [&_strong]:font-medium"
+                    dangerouslySetInnerHTML={{ __html: `&ldquo;${testimonial.review}&rdquo;` }}
+                  />
                   <div className="border-t border-sand/40 pt-4">
                     <p className="text-sm font-medium text-charcoal">
                       {testimonial.name}
@@ -955,9 +1023,9 @@ export default function HomePage() {
       <section className="py-24 md:py-32 bg-warm-white">
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading
-            eyebrow="Your Providers"
-            title="Your Providers. Your Outcomes."
-            description="Every provider on this team is licensed, dermatology-trained, and hand-selected."
+            eyebrow="Meet the Team"
+            title="The People Behind Your Results"
+            description="Every provider is licensed, dermatology-trained, and hand-selected. You're not just booking a service — you're choosing who treats you."
           />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
@@ -979,8 +1047,8 @@ export default function HomePage() {
                     {provider.name}
                   </h3>
                   <p className="text-xs text-champagne-dark tracking-wide uppercase mt-1">{provider.title}</p>
-                  <p className="text-xs text-charcoal-muted mt-1.5">
-                    {provider.credential}
+                  <p className="text-[0.8rem] text-charcoal-muted mt-2 leading-relaxed">
+                    {provider.personality}
                   </p>
                 </Link>
               </FadeIn>
@@ -1021,7 +1089,7 @@ export default function HomePage() {
               How It Works
             </h2>
             <p className="text-taupe-light leading-[1.8] mb-14 max-w-2xl mx-auto">
-              No pressure. No upselling. A clear path from assessment to outcome, designed around you.
+              No pressure. No upselling. A clear path from assessment to outcome, designed around you. Patients across Durham, Apex, Cary, and the entire Triangle trust this process.
             </p>
           </FadeIn>
 

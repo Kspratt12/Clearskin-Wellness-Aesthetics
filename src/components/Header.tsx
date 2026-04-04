@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Phone, ExternalLink } from "lucide-react";
+import { Menu, X, Phone, ExternalLink, Calendar } from "lucide-react";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -145,6 +145,65 @@ export function Header() {
           </button>
         </nav>
       </header>
+
+      {/* Sticky Bottom Booking Bar — appears on scroll */}
+      <AnimatePresence>
+        {isScrolled && !isMobileOpen && (
+          <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: 100, opacity: 0 }}
+            transition={{ type: "tween", duration: 0.3, ease: "easeOut" }}
+            className="fixed bottom-0 left-0 right-0 z-50 bg-charcoal/95 backdrop-blur-md border-t border-warm-white/10 shadow-[0_-4px_30px_rgba(0,0,0,0.15)] md:hidden"
+          >
+            <div className="flex items-center justify-between px-4 py-3">
+              <div className="flex-1 min-w-0">
+                <p className="text-warm-white text-sm font-medium truncate">
+                  Ready to book?
+                </p>
+                <p className="text-taupe-light text-[0.65rem] tracking-wide">
+                  Takes less than 30 seconds
+                </p>
+              </div>
+              <a
+                href="https://nccdermatology.myaestheticrecord.com/online-booking/book-appointment"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 bg-champagne text-charcoal px-5 py-2.5 text-[0.75rem] tracking-[0.12em] uppercase font-semibold shrink-0 hover:bg-champagne-light transition-colors"
+              >
+                <Calendar size={14} />
+                Book Now
+              </a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Desktop Sticky Booking Bar */}
+      <AnimatePresence>
+        {isScrolled && !isMobileOpen && (
+          <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: 100, opacity: 0 }}
+            transition={{ type: "tween", duration: 0.3, ease: "easeOut" }}
+            className="fixed bottom-6 right-6 z-50 hidden md:block"
+          >
+            <a
+              href="https://nccdermatology.myaestheticrecord.com/online-booking/book-appointment"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2.5 bg-charcoal text-warm-white px-7 py-4 text-sm tracking-[0.12em] uppercase font-medium shadow-[0_8px_30px_rgba(0,0,0,0.2)] hover:bg-charcoal-light hover:shadow-[0_12px_40px_rgba(0,0,0,0.3)] transition-all duration-300 group"
+            >
+              <Calendar size={16} className="text-champagne" />
+              Book Appointment
+              <span className="text-[0.6rem] text-taupe-light font-normal normal-case tracking-normal ml-1 hidden lg:inline">
+                — 30 sec
+              </span>
+            </a>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Mobile Navigation */}
       <AnimatePresence>
