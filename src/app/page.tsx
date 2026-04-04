@@ -26,6 +26,7 @@ const featuredTreatments = [
     image: "Facial treatment, neuromodulator injection",
     photo: "/images/services/neuromodulators.png",
     href: "/services#injectables",
+    price: "Starting at $4/unit",
   },
   {
     title: "Dermal Fillers",
@@ -35,6 +36,7 @@ const featuredTreatments = [
     image: "Dermal filler treatment close-up",
     photo: "/images/services/dermal-fillers.png",
     href: "/services#injectables",
+    price: "Starting at $700/syringe",
   },
   {
     title: "Morpheus8",
@@ -44,6 +46,7 @@ const featuredTreatments = [
     image: "Morpheus8 device treatment on face",
     photo: "/images/services/morpheus8.png",
     href: "/services#advanced",
+    price: "Starting at $350",
   },
   {
     title: "PicoSure Pro",
@@ -53,6 +56,7 @@ const featuredTreatments = [
     image: "Laser skin treatment session",
     photo: "/images/services/picosure-pro.png",
     href: "/services#advanced",
+    price: "Starting at $200",
   },
   {
     title: "Medical Microneedling",
@@ -62,6 +66,7 @@ const featuredTreatments = [
     image: "SkinPen microneedling close-up",
     photo: "/images/services/medical-microneedling.png",
     href: "/services#rejuvenation",
+    price: "Starting at $200",
   },
   {
     title: "Laser Hair Removal",
@@ -71,6 +76,7 @@ const featuredTreatments = [
     image: "Laser hair removal treatment",
     href: "/services#advanced",
     photo: "/images/services/laser-hair-removal.png",
+    price: "Starting at $50",
   },
 ];
 
@@ -352,8 +358,11 @@ export default function HomePage() {
                     <h3 className="font-[family-name:var(--font-heading)] text-xl font-medium text-charcoal mb-1">
                       {treatment.title}
                     </h3>
-                    <p className="text-xs text-champagne-dark tracking-wide mb-3">
+                    <p className="text-xs text-champagne-dark tracking-wide mb-1">
                       {treatment.subtitle}
+                    </p>
+                    <p className="text-sm font-medium text-charcoal mb-3">
+                      {treatment.price}
                     </p>
                     <p className="text-sm text-charcoal-muted leading-relaxed">
                       {treatment.description}
