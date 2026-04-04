@@ -200,21 +200,31 @@ export default function HomePage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.35 }}
-                className="text-charcoal-muted leading-[1.8] mb-3 text-[0.95rem] max-w-md"
+                className="text-charcoal-muted leading-[1.8] mb-4 text-[0.95rem] max-w-md"
               >
-                Medical-grade treatments delivered by dermatology specialists.
-                Real science. Real results. Every skin type.
+                Advanced cosmetic treatments guided by board-certified
+                dermatology. Every protocol built on clinical evidence,
+                every result backed by real skin science.
               </motion.p>
 
-              <motion.p
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.45 }}
-                className="text-xs text-taupe-dark tracking-wide mb-10 flex items-center gap-2"
+                className="flex items-center gap-4 mb-10"
               >
-                <Shield size={12} className="text-champagne-dark" />
-                Backed by NC Center for Dermatology
-              </motion.p>
+                <div className="flex items-center gap-2 text-xs text-taupe-dark tracking-wide">
+                  <Shield size={12} className="text-champagne-dark" />
+                  NC Center for Dermatology
+                </div>
+                <div className="w-px h-3 bg-sand" />
+                <div className="flex items-center gap-1.5">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} size={10} className="fill-champagne text-champagne" />
+                  ))}
+                  <span className="text-xs text-taupe-dark ml-1">Google Reviews</span>
+                </div>
+              </motion.div>
 
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -299,9 +309,9 @@ export default function HomePage() {
           <div className="flex flex-col md:flex-row items-center justify-center gap-5 md:gap-10 text-warm-white/90">
             {[
               { icon: Shield, label: "Dermatology-Backed" },
-              { icon: Award, label: "Board-Certified Leadership" },
-              { icon: Heart, label: "All Skin Types Welcome" },
-              { icon: Sparkles, label: "Advanced Technology" },
+              { icon: Award, label: "Board-Certified Dermatologist" },
+              { icon: Heart, label: "All Skin Types" },
+              { icon: Sparkles, label: "Medical-Grade Technology" },
             ].map((item, i) => (
               <div key={item.label} className="flex items-center gap-2.5">
                 {i > 0 && <div className="hidden md:block w-px h-3.5 bg-warm-white/15 mr-5" />}
@@ -358,9 +368,13 @@ export default function HomePage() {
                     <p className="text-[0.7rem] text-taupe-dark tracking-[0.12em] uppercase mb-3">
                       {treatment.subtitle}
                     </p>
-                    <p className="text-sm text-charcoal-muted leading-relaxed">
+                    <p className="text-sm text-charcoal-muted leading-relaxed mb-4">
                       {treatment.description}
                     </p>
+                    <span className="inline-flex items-center text-xs text-champagne-dark tracking-[0.1em] uppercase group-hover:text-charcoal transition-colors duration-300">
+                      Learn More
+                      <ArrowRight size={12} className="ml-1.5 group-hover:translate-x-1 transition-transform" />
+                    </span>
                   </div>
                 </Link>
               </FadeIn>
@@ -867,15 +881,15 @@ export default function HomePage() {
                   Where Cosmetic Artistry Meets Medical Authority
                 </h2>
                 <p className="text-charcoal-muted leading-[1.8] mb-5">
-                  Clearskin & Wellness Aesthetics is the cosmetic extension of
-                  North Carolina Center for Dermatology, a trusted Durham
-                  practice led by Dr. Jeffrey Scales. Every treatment is
-                  informed by board-certified dermatology expertise.
+                  Most med spas hire aestheticians and call it clinical.
+                  We&apos;re the cosmetic arm of NC Center for Dermatology,
+                  led by Dr. Jeffrey Scales, a board-certified dermatologist
+                  trained at Penn Med and Wake Forest.
                 </p>
                 <p className="text-charcoal-muted leading-[1.8] mb-8">
-                  Your provider team doesn&apos;t just know aesthetics. They
-                  understand the science of skin at its deepest level.
-                  That&apos;s a level of confidence most practices cannot offer.
+                  That means your injector, your laser specialist, and your
+                  esthetician all operate under dermatology-level oversight.
+                  Same building. Same standard. Different experience entirely.
                 </p>
 
                 <div className="grid grid-cols-2 gap-x-6 gap-y-4 mb-8">
