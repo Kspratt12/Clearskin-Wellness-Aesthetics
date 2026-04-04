@@ -248,7 +248,7 @@ function ServiceCategory({
   return (
     <section id={id} className="py-16 md:py-20">
       <SectionHeading eyebrow={eyebrow} title={title} description={description} />
-      <div className={`grid md:grid-cols-${columns} gap-6`}>
+      <div className={columns === 3 ? "grid md:grid-cols-2 lg:grid-cols-3 gap-6" : "grid md:grid-cols-2 gap-6"}>
         {services.map((service, i) => (
           <FadeIn key={service.name} delay={i * 0.08}>
             <ServiceCard service={service} />
@@ -323,7 +323,7 @@ export default function ServicesPage() {
       {/* Category Quick Nav */}
       <section className="bg-ivory border-y border-sand/50 sticky top-20 z-30">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex items-center gap-6 overflow-x-auto py-4 scrollbar-none">
+          <div className="flex items-center gap-4 md:gap-6 overflow-x-auto py-3 md:py-4 scrollbar-none">
             {[
               { id: "injectables", label: "Injectables" },
               { id: "advanced", label: "Laser & Advanced" },

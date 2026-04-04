@@ -165,7 +165,7 @@ export function Header() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ type: "tween", duration: 0.35, ease: "easeInOut" }}
-              className="absolute right-0 top-0 bottom-0 w-80 bg-ivory shadow-2xl flex flex-col"
+              className="absolute right-0 top-0 bottom-0 w-[85vw] max-w-80 bg-ivory shadow-2xl flex flex-col"
             >
               <div className="flex items-center justify-between p-6 border-b border-sand">
                 <span className="font-[family-name:var(--font-heading)] text-xl font-semibold text-charcoal">

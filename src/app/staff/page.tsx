@@ -184,7 +184,7 @@ export default function StaffPage() {
                 >
                   {/* Photo */}
                   <div className={i % 2 === 1 ? "lg:order-2" : ""}>
-                    <div className="aspect-[3/4] relative w-full max-w-md mx-auto lg:max-w-none overflow-hidden bg-sand-light">
+                    <div className="aspect-[3/4] relative w-full max-w-sm sm:max-w-md mx-auto lg:max-w-none overflow-hidden bg-sand-light">
                       <Image
                         src={provider.image}
                         alt={provider.name}

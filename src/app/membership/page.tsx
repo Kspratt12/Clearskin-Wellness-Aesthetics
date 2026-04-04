@@ -142,14 +142,14 @@ export default function MembershipPage() {
             {tiers.map((tier, i) => (
               <FadeIn key={tier.name} delay={i * 0.1}>
                 <div
-                  className={`relative bg-warm-white border-t-[3px] ${tier.accent} border-x border-b border-sand/60 flex flex-col h-full hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] transition-all duration-500 ${tier.popular ? "ring-1 ring-champagne/40 scale-[1.02] xl:-mt-4 xl:mb-4" : ""}`}
+                  className={`relative bg-warm-white border-t-[3px] ${tier.accent} border-x border-b border-sand/60 flex flex-col h-full hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] transition-all duration-500 ${tier.popular ? "ring-1 ring-champagne/40 xl:scale-[1.02] xl:-mt-4 xl:mb-4" : ""}`}
                 >
                   {/* Subtle gradient header */}
                   <div className={`absolute inset-x-0 top-0 h-32 bg-gradient-to-b ${tier.gradient} pointer-events-none`} />
 
                   {tier.popular && (
                     <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
-                      <span className="inline-flex items-center gap-1.5 bg-gradient-to-r from-champagne-dark to-champagne text-warm-white text-[0.6rem] uppercase tracking-[0.2em] font-semibold px-5 py-1.5 shadow-lg">
+                      <span className="inline-flex items-center gap-1.5 bg-gradient-to-r from-champagne-dark to-champagne text-warm-white text-[0.65rem] uppercase tracking-[0.2em] font-semibold px-5 py-1.5 shadow-lg">
                         <Star size={10} fill="currentColor" />
                         Most Popular
                       </span>
@@ -191,7 +191,7 @@ export default function MembershipPage() {
 
                     {/* Monthly Choice */}
                     <div className="mb-6">
-                      <h4 className="text-[0.65rem] uppercase tracking-[0.15em] text-charcoal font-semibold mb-3">
+                      <h4 className="text-xs uppercase tracking-[0.15em] text-charcoal font-semibold mb-3">
                         Monthly Treatment Choice
                       </h4>
                       <ul className="space-y-2.5">
@@ -218,7 +218,7 @@ export default function MembershipPage() {
 
                     {/* Discounts */}
                     <div className="mb-8 flex-1">
-                      <h4 className="text-[0.65rem] uppercase tracking-[0.15em] text-charcoal font-semibold mb-3 mt-4">
+                      <h4 className="text-xs uppercase tracking-[0.15em] text-charcoal font-semibold mb-3 mt-4">
                         Member Discounts
                       </h4>
                       <ul className="space-y-2">
