@@ -295,8 +295,138 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ========== WHY CHOOSE US ========== */}
+      {/* ========== REAL RESULTS ========== */}
       <section className="py-20 md:py-28 bg-warm-white">
+        <div className="max-w-7xl mx-auto px-6">
+          <SectionHeading
+            eyebrow="Real Results"
+            title="See the Difference"
+            description="Real patient transformations from our clinical team. Every result reflects personalized care, medical-grade treatments, and a commitment to your skin health."
+          />
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                src: "/images/results/before-after-1.png",
+                alt: "Acne treatment results — before and after",
+                label: "Acne & Texture Improvement",
+              },
+              {
+                src: "/images/results/before-after-2.png",
+                alt: "Pigmentation correction results — before and after",
+                label: "Pigmentation Correction",
+              },
+              {
+                src: "/images/results/before-after-3.png",
+                alt: "Acne clearance results — before and after",
+                label: "Acne Clearance & Skin Clarity",
+              },
+              {
+                src: "/images/results/before-after-4.png",
+                alt: "Scalp and hair treatment results — before and after",
+                label: "Scalp & Hair Restoration",
+              },
+            ].map((result, i) => (
+              <FadeIn key={result.src} delay={i * 0.1}>
+                <div className="group">
+                  <div className="relative aspect-square overflow-hidden bg-sand-light">
+                    <Image
+                      src={result.src}
+                      alt={result.alt}
+                      fill
+                      className="object-cover group-hover:scale-[1.02] transition-transform duration-700"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
+                  </div>
+                  <p className="text-sm text-charcoal mt-3 font-medium">
+                    {result.label}
+                  </p>
+                  <p className="text-xs text-charcoal-muted mt-1">
+                    Actual patient results. Individual outcomes may vary.
+                  </p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+
+          <FadeIn delay={0.3}>
+            <div className="text-center mt-12">
+              <a
+                href="https://www.instagram.com/clearskinwellnessa/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-sm text-charcoal tracking-wider border-b border-charcoal/30 pb-1 hover:border-champagne-dark hover:text-champagne-dark transition-colors group"
+              >
+                See More Results on Instagram
+                <ArrowRight
+                  size={14}
+                  className="ml-2 group-hover:translate-x-1 transition-transform"
+                />
+              </a>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* ========== VIDEO SHOWCASE ========== */}
+      <section className="py-20 md:py-28 bg-cream">
+        <div className="max-w-7xl mx-auto px-6">
+          <SectionHeading
+            eyebrow="In Action"
+            title="Experience Our Treatments"
+            description="Watch real treatments and results from Clearskin & Wellness Aesthetics. See the care, precision, and expertise our team brings to every session."
+          />
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { src: "/images/videos/reel-1.mp4", label: "Treatment Highlight" },
+              { src: "/images/videos/reel-2.mp4", label: "Results in Motion" },
+              { src: "/images/videos/reel-3.mp4", label: "Behind the Treatment" },
+              { src: "/images/videos/reel-4.mp4", label: "Patient Experience" },
+            ].map((video, i) => (
+              <FadeIn key={video.src} delay={i * 0.1}>
+                <div className="group">
+                  <div className="relative aspect-[9/16] overflow-hidden bg-charcoal rounded-sm">
+                    <video
+                      src={video.src}
+                      controls
+                      playsInline
+                      preload="metadata"
+                      className="w-full h-full object-cover"
+                      controlsList="nodownload"
+                    >
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                  <p className="text-sm text-charcoal mt-3 font-medium">
+                    {video.label}
+                  </p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+
+          <FadeIn delay={0.3}>
+            <div className="text-center mt-12">
+              <a
+                href="https://www.instagram.com/clearskinwellnessa/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-sm text-charcoal tracking-wider border-b border-charcoal/30 pb-1 hover:border-champagne-dark hover:text-champagne-dark transition-colors group"
+              >
+                Follow Us on Instagram
+                <ArrowRight
+                  size={14}
+                  className="ml-2 group-hover:translate-x-1 transition-transform"
+                />
+              </a>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* ========== WHY CHOOSE US ========== */}
+      <section className="py-20 md:py-28 bg-ivory">
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading
             eyebrow="Why Clearskin & Wellness"
