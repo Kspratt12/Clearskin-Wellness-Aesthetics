@@ -14,6 +14,7 @@ interface Service {
   duration?: string;
   image: string;
   photo?: string;
+  price?: string;
 }
 
 const injectables: Service[] = [
@@ -24,6 +25,7 @@ const injectables: Service[] = [
       "Temporarily smooth fine lines and dynamic wrinkles, especially across the forehead, between the brows, and around the eyes. Results appear within two weeks and typically last several months. Repeat treatments are recommended to maintain your refreshed look.",
     image: "Neuromodulator injection treatment",
     photo: "/images/services/neuromodulators.png",
+    price: "Starting at $4/unit",
   },
   {
     name: "Dermal Fillers",
@@ -32,6 +34,7 @@ const injectables: Service[] = [
       "Restore lost volume, smooth deep creases, and refine facial contours using premium hyaluronic acid fillers. Results are natural-looking and can last from several months to over a year. Ideal for lips, cheeks, jawline, and under-eye hollows.",
     image: "Dermal filler treatment",
     photo: "/images/services/dermal-fillers.png",
+    price: "Starting at $700/syringe",
   },
 ];
 
@@ -43,6 +46,7 @@ const advancedTreatments: Service[] = [
       "Combine microneedling with radiofrequency energy to stimulate deep collagen remodeling. Morpheus8 tightens skin, improves texture, and refines contours on both face and body. Multiple sessions may be recommended for optimal results.",
     image: "Morpheus8 treatment session",
     photo: "/images/services/morpheus8.png",
+    price: "Starting at $350",
   },
   {
     name: "PicoSure Pro",
@@ -51,6 +55,7 @@ const advancedTreatments: Service[] = [
       "Next-generation picosecond laser technology targets melasma, hyperpigmentation, sunspots, acne scars, and uneven tone. Delivers energy so rapidly that pigment shatters without burning surrounding tissue, stimulating your skin's natural renewal for brighter, younger-looking results.",
     image: "PicoSure Pro laser treatment",
     photo: "/images/services/picosure-pro.png",
+    price: "Starting at $200",
   },
   {
     name: "PicoSure Pro for Tattoo Removal",
@@ -59,6 +64,7 @@ const advancedTreatments: Service[] = [
       "Precisely targeted laser energy breaks down tattoo ink into tiny particles that your body naturally eliminates. The number of sessions depends on ink type, tattoo size, placement, and individual factors.",
     image: "Laser tattoo removal session",
     photo: "/images/services/picosure-tattoo-removal.png",
+    price: "Starting at $99",
   },
   {
     name: "Laser Hair Removal",
@@ -67,6 +73,7 @@ const advancedTreatments: Service[] = [
       "Concentrated light energy targets and reduces unwanted hair on the face, bikini area, underarms, legs, and back. Multiple sessions are typically needed for lasting smoothness across all skin types.",
     image: "Laser hair removal treatment",
     photo: "/images/services/laser-hair-removal.png",
+    price: "Starting at $50",
   },
   {
     name: "Flesh Mole Removal",
@@ -75,6 +82,7 @@ const advancedTreatments: Service[] = [
       "Safe and precise removal of small flesh-colored, brown, or black moles on the face, neck, back, and chest for a smoother, more even complexion.",
     image: "Cosmetic mole removal procedure",
     photo: "/images/services/flesh-mole-removal.png",
+    price: "$400",
   },
 ];
 
@@ -86,6 +94,7 @@ const skinRejuvenation: Service[] = [
       "Medical-grade microneedling creates controlled micro-injuries that stimulate your skin's natural collagen and elastin production. Effective for fine lines, acne scars, wrinkles, and uneven texture. Customizable for face, neck, and décolletage.",
     image: "SkinPen microneedling treatment",
     photo: "/images/services/medical-microneedling.png",
+    price: "Starting at $200",
   },
   {
     name: "PRP Hair Treatments",
@@ -94,6 +103,7 @@ const skinRejuvenation: Service[] = [
       "A regenerative treatment using platelet-rich plasma from your own blood to stimulate hair follicles and support natural hair growth. Multiple sessions and long-term maintenance are recommended for best results.",
     image: "PRP hair treatment session",
     photo: "/images/services/prp-hair.png",
+    price: "Starting at $450",
   },
   {
     name: "Chemical Peels for Face",
@@ -103,6 +113,7 @@ const skinRejuvenation: Service[] = [
     duration: "30 minutes",
     image: "Chemical peel application",
     photo: "/images/services/chemical-peels.png",
+    price: "Starting at $75",
   },
 ];
 
@@ -115,15 +126,17 @@ const facials: Service[] = [
     duration: "30 minutes",
     image: "Express facial treatment",
     photo: "/images/services/express-facial.png",
+    price: "$75",
   },
   {
     name: "Skin Therapy Facial",
     tagline: "Deep Treatment & Rejuvenation",
     description:
       "Our signature facial designed for deep extractions, anti-aging support, and lasting hydration. Includes skin analysis, steam cleansing, exfoliation, extractions, massage, hydrating mask, Vitamin C serum, moisturizer, eye lift serum, and sunscreen.",
-    duration: "50 minutes",
+    duration: "60 minutes",
     image: "Skin therapy facial session",
     photo: "/images/services/skin-therapy-facial.png",
+    price: "$125",
   },
   {
     name: "Back Facial Treatment",
@@ -133,6 +146,7 @@ const facials: Service[] = [
     duration: "45 minutes",
     image: "Back facial treatment",
     photo: "/images/services/back-facial-treatment.png",
+    price: "$95",
   },
   {
     name: "Microdermabrasion Treatment",
@@ -142,6 +156,7 @@ const facials: Service[] = [
     duration: "30 minutes",
     image: "Microdermabrasion treatment",
     photo: "/images/services/microdermabrasion.png",
+    price: "Starting at $75",
   },
   {
     name: "Dermaplaning Facial Treatment",
@@ -151,6 +166,7 @@ const facials: Service[] = [
     duration: "60 minutes",
     image: "Dermaplaning facial treatment",
     photo: "/images/services/dermaplaning.png",
+    price: "$165",
   },
   {
     name: "Microdermabrasion & Skin Facial Treatment",
@@ -160,12 +176,13 @@ const facials: Service[] = [
     duration: "60 minutes",
     image: "Combined microdermabrasion and facial",
     photo: "/images/services/microdermabrasion-facial.png",
+    price: "$149",
   },
 ];
 
 const addOns = [
-  { name: "Paraffin Wax Hands", description: "Deeply moisturizing paraffin wax treatment for the hands." },
-  { name: "Paraffin Wax Feet", description: "Deeply moisturizing paraffin wax treatment for the feet." },
+  { name: "Paraffin Wax Hands", description: "Deeply moisturizing paraffin wax treatment for the hands.", price: "$20" },
+  { name: "Paraffin Wax Feet", description: "Deeply moisturizing paraffin wax treatment for the feet.", price: "$20" },
 ];
 
 function ServiceCard({ service }: { service: Service }) {
@@ -197,9 +214,14 @@ function ServiceCard({ service }: { service: Service }) {
             </span>
           )}
         </div>
-        <p className="text-xs text-champagne-dark tracking-wide mb-4">
+        <p className="text-xs text-champagne-dark tracking-wide mb-2">
           {service.tagline}
         </p>
+        {service.price && (
+          <p className="text-sm font-medium text-charcoal mb-4">
+            {service.price}
+          </p>
+        )}
         <p className="text-sm text-charcoal-muted leading-relaxed">
           {service.description}
         </p>
@@ -378,6 +400,9 @@ export default function ServicesPage() {
                   <h3 className="font-[family-name:var(--font-heading)] text-lg font-medium text-charcoal mb-2">
                     {addon.name}
                   </h3>
+                  <p className="text-sm font-medium text-charcoal mb-1">
+                    {addon.price}
+                  </p>
                   <p className="text-sm text-charcoal-muted">
                     {addon.description}
                   </p>
