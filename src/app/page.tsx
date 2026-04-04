@@ -1,8 +1,9 @@
 "use client";
 
+import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   Shield,
   Sparkles,
@@ -115,7 +116,37 @@ const providerPreview = [
   },
 ];
 
+const heroImages = [
+  {
+    src: "/images/clinic/hero.png",
+    alt: "Clearskin & Wellness Aesthetics team in front of clinic",
+  },
+  {
+    src: "/images/clinic/hero2.png",
+    alt: "CWA treatment room with Morpheus8 and advanced technology",
+  },
+  {
+    src: "/images/clinic/lobby.png",
+    alt: "Clearskin & Wellness Aesthetics lobby with artwork",
+  },
+  {
+    src: "/images/clinic/ribbon-cutting.png",
+    alt: "Clearskin & Wellness Aesthetics grand opening ribbon cutting",
+  },
+];
+
 export default function HomePage() {
+  const [currentHero, setCurrentHero] = useState(0);
+
+  const nextImage = useCallback(() => {
+    setCurrentHero((prev) => (prev + 1) % heroImages.length);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(nextImage, 5000);
+    return () => clearInterval(interval);
+  }, [nextImage]);
+
   return (
     <>
       {/* ========== HERO ========== */}
@@ -194,22 +225,48 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Right — Hero Image */}
+          {/* Right — Hero Image Carousel */}
           <motion.div
             initial={{ opacity: 0, scale: 1.02 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="order-1 lg:order-2"
+            className="order-1 lg:order-2 relative h-[50vh] lg:h-auto overflow-hidden bg-sand-light"
           >
-            <div className="relative h-[50vh] lg:h-full overflow-hidden bg-sand-light">
-              <Image
-                src="/images/clinic/hero.png"
-                alt="Clearskin & Wellness Aesthetics team in front of clinic"
-                fill
-                className="object-cover object-top"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                priority
-              />
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentHero}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 1, ease: "easeInOut" }}
+                className="absolute inset-0"
+              >
+                <Image
+                  src={heroImages[currentHero].src}
+                  alt={heroImages[currentHero].alt}
+                  fill
+                  className="object-cover object-center"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority={currentHero === 0}
+                  quality={100}
+                />
+              </motion.div>
+            </AnimatePresence>
+
+            {/* Slide Indicators */}
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+              {heroImages.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrentHero(i)}
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                    i === currentHero
+                      ? "bg-champagne w-6"
+                      : "bg-warm-white/50 hover:bg-warm-white/80"
+                  }`}
+                  aria-label={`View image ${i + 1}`}
+                />
+              ))}
             </div>
           </motion.div>
         </div>
