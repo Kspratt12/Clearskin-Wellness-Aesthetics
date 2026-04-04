@@ -39,26 +39,33 @@ export function Footer() {
     <footer className="bg-charcoal text-warm-white">
       {/* CTA Band */}
       <div className="bg-charcoal-light">
-        <div className="max-w-7xl mx-auto px-6 py-14 text-center">
-          <h3 className="font-[family-name:var(--font-heading)] text-3xl md:text-4xl font-light text-warm-white mb-3">
-            Ready to Begin Your Skin Journey?
+        <div className="max-w-7xl mx-auto px-6 py-16 text-center">
+          <div className="flex items-center justify-center gap-3 mb-5">
+            <div className="premium-rule" />
+            <span className="text-[0.65rem] uppercase tracking-[0.3em] text-champagne font-medium">
+              Start Today
+            </span>
+            <div className="premium-rule" />
+          </div>
+          <h3 className="font-[family-name:var(--font-heading)] text-3xl md:text-4xl font-light text-warm-white mb-4">
+            Your Best Skin Is One Consultation Away
           </h3>
-          <p className="text-taupe-light text-sm max-w-xl mx-auto mb-8">
-            Schedule a consultation with our expert team. We&apos;ll create a
-            personalized treatment plan tailored to your unique skin goals.
+          <p className="text-taupe-light text-sm max-w-lg mx-auto mb-10 leading-relaxed">
+            Every journey begins with a personalized consultation. Our team
+            will build a plan around your goals, your skin, and your timeline.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href="https://nccdermatology.myaestheticrecord.com/online-booking/book-appointment"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-champagne text-charcoal px-8 py-3 text-sm tracking-wider font-medium hover:bg-champagne-light transition-all duration-300"
+              className="bg-champagne text-charcoal px-10 py-3.5 text-sm tracking-[0.15em] uppercase font-medium hover:bg-champagne-light transition-all duration-300"
             >
-              Book Consultation
+              Book Your Consultation
             </a>
             <a
               href="tel:+19195891307"
-              className="border border-warm-white/30 text-warm-white px-8 py-3 text-sm tracking-wider hover:bg-warm-white/10 transition-all duration-300"
+              className="border border-warm-white/20 text-warm-white px-10 py-3.5 text-sm tracking-[0.12em] uppercase hover:bg-warm-white/5 transition-all duration-300"
             >
               Call (919) 589-1307
             </a>

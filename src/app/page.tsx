@@ -169,50 +169,51 @@ export default function HomePage() {
     <>
       {/* ========== HERO ========== */}
       <section className="relative overflow-hidden">
-        <div className="grid lg:grid-cols-2 min-h-[85vh]">
+        <div className="grid lg:grid-cols-2 min-h-[90vh]">
           {/* Left — Copy */}
-          <div className="flex items-center px-6 md:px-12 lg:px-20 py-20 lg:py-0 order-2 lg:order-1">
+          <div className="flex items-center px-6 sm:px-10 md:px-14 lg:px-20 py-20 lg:py-0 order-2 lg:order-1 bg-gradient-to-br from-ivory via-warm-white to-sand-light/30">
             <div className="max-w-xl">
-              <motion.span
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="inline-block text-xs uppercase tracking-[0.3em] text-champagne-dark font-medium mb-6"
+                className="flex items-center gap-3 mb-8"
               >
-                Durham, NC
-              </motion.span>
+                <div className="premium-rule" />
+                <span className="text-xs uppercase tracking-[0.35em] text-champagne-dark font-medium">
+                  Durham, North Carolina
+                </span>
+              </motion.div>
 
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="font-[family-name:var(--font-heading)] text-4xl md:text-5xl lg:text-6xl font-light text-charcoal leading-[1.1] mb-6"
+                transition={{ duration: 0.7, delay: 0.2 }}
+                className="font-[family-name:var(--font-heading)] text-4xl md:text-5xl lg:text-[3.5rem] xl:text-6xl font-light text-charcoal leading-[1.08] mb-7"
               >
-                Where Skin Science
+                Your Skin Deserves
                 <br />
-                <span className="italic font-light">Meets Artistry</span>
+                <span className="italic">Expert Hands</span>
               </motion.h1>
 
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.35 }}
-                className="text-charcoal-muted leading-relaxed mb-4 text-base"
+                className="text-charcoal-muted leading-[1.8] mb-3 text-[0.95rem] max-w-md"
               >
-                Clearskin & Wellness Aesthetics is Durham&apos;s premier
-                destination for cosmetic treatments and skin wellness,
-                thoughtfully designed for every skin type, every concern,
-                and every goal.
+                Medical-grade treatments delivered by dermatology specialists.
+                Real science. Real results. Every skin type.
               </motion.p>
 
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.45 }}
-                className="text-sm text-taupe-dark mb-8"
+                className="text-xs text-taupe-dark tracking-wide mb-10 flex items-center gap-2"
               >
-                Backed by the medical expertise of North Carolina Center for
-                Dermatology.
+                <Shield size={12} className="text-champagne-dark" />
+                Backed by NC Center for Dermatology
               </motion.p>
 
               <motion.div
@@ -225,19 +226,19 @@ export default function HomePage() {
                   href="https://nccdermatology.myaestheticrecord.com/online-booking/book-appointment"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center bg-charcoal text-warm-white px-8 py-3.5 text-sm tracking-wider hover:bg-charcoal-light transition-all duration-300 group"
+                  className="inline-flex items-center justify-center bg-charcoal text-warm-white px-10 py-4 text-sm tracking-[0.15em] uppercase font-medium hover:bg-charcoal-light transition-all duration-300 group"
                 >
-                  Book Consultation
+                  Book a Consultation
                   <ArrowRight
                     size={15}
-                    className="ml-2 group-hover:translate-x-1 transition-transform"
+                    className="ml-3 group-hover:translate-x-1 transition-transform"
                   />
                 </a>
                 <Link
                   href="/services"
-                  className="inline-flex items-center justify-center border border-charcoal/20 text-charcoal px-8 py-3.5 text-sm tracking-wider hover:border-charcoal/40 hover:bg-sand-light/50 transition-all duration-300"
+                  className="inline-flex items-center justify-center border border-charcoal/20 text-charcoal px-10 py-4 text-sm tracking-[0.12em] uppercase hover:border-charcoal/40 hover:bg-sand-light/50 transition-all duration-300"
                 >
-                  Explore Treatments
+                  View Treatments
                 </Link>
               </motion.div>
             </div>
@@ -245,17 +246,17 @@ export default function HomePage() {
 
           {/* Right — Hero Image Carousel */}
           <motion.div
-            initial={{ opacity: 0, scale: 1.02 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="order-1 lg:order-2 relative h-[50vh] lg:h-auto overflow-hidden bg-sand-light"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.2 }}
+            className="order-1 lg:order-2 relative h-[55vh] lg:h-auto overflow-hidden bg-sand-light"
           >
             {heroImages.map((img, i) => (
               <motion.div
                 key={img.src}
                 initial={false}
                 animate={{ opacity: i === currentHero ? 1 : 0 }}
-                transition={{ duration: 1.5, ease: "easeInOut" }}
+                transition={{ duration: 1.8, ease: "easeInOut" }}
                 className="absolute inset-0"
               >
                 <Image
@@ -270,16 +271,19 @@ export default function HomePage() {
               </motion.div>
             ))}
 
+            {/* Subtle gradient overlay for depth */}
+            <div className="absolute inset-0 bg-gradient-to-t from-charcoal/10 via-transparent to-transparent pointer-events-none" />
+
             {/* Slide Indicators */}
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2.5 z-10">
               {heroImages.map((_, i) => (
                 <button
                   key={i}
                   onClick={() => setCurrentHero(i)}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                  className={`h-[3px] rounded-full transition-all duration-500 ${
                     i === currentHero
-                      ? "bg-champagne w-6"
-                      : "bg-warm-white/50 hover:bg-warm-white/80"
+                      ? "bg-champagne w-8"
+                      : "bg-warm-white/40 w-4 hover:bg-warm-white/70"
                   }`}
                   aria-label={`View image ${i + 1}`}
                 />
@@ -290,63 +294,51 @@ export default function HomePage() {
       </section>
 
       {/* ========== TRUST BAR ========== */}
-      <section className="bg-charcoal py-6">
+      <section className="bg-charcoal py-5">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12 text-warm-white">
-            <div className="flex items-center gap-2">
-              <Shield size={16} className="text-champagne" />
-              <span className="text-xs tracking-wider uppercase">
-                Dermatology-Backed
-              </span>
-            </div>
-            <div className="hidden md:block w-px h-4 bg-warm-white/20" />
-            <div className="flex items-center gap-2">
-              <Award size={16} className="text-champagne" />
-              <span className="text-xs tracking-wider uppercase">
-                Board-Certified Leadership
-              </span>
-            </div>
-            <div className="hidden md:block w-px h-4 bg-warm-white/20" />
-            <div className="flex items-center gap-2">
-              <Heart size={16} className="text-champagne" />
-              <span className="text-xs tracking-wider uppercase">
-                All Skin Types Welcome
-              </span>
-            </div>
-            <div className="hidden md:block w-px h-4 bg-warm-white/20" />
-            <div className="flex items-center gap-2">
-              <Star size={16} className="text-champagne" />
-              <span className="text-xs tracking-wider uppercase">
-                Bilingual Team
-              </span>
-            </div>
+          <div className="flex flex-col md:flex-row items-center justify-center gap-5 md:gap-10 text-warm-white/90">
+            {[
+              { icon: Shield, label: "Dermatology-Backed" },
+              { icon: Award, label: "Board-Certified Leadership" },
+              { icon: Heart, label: "All Skin Types Welcome" },
+              { icon: Sparkles, label: "Advanced Technology" },
+            ].map((item, i) => (
+              <div key={item.label} className="flex items-center gap-2.5">
+                {i > 0 && <div className="hidden md:block w-px h-3.5 bg-warm-white/15 mr-5" />}
+                <item.icon size={14} className="text-champagne" strokeWidth={1.5} />
+                <span className="text-[0.68rem] tracking-[0.2em] uppercase font-light">
+                  {item.label}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* ========== FEATURED TREATMENTS ========== */}
-      <section className="py-20 md:py-28 bg-ivory">
+      <section className="py-24 md:py-32 bg-ivory">
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading
-            eyebrow="Our Services"
-            title="Treatments Designed Around You"
-            description="From advanced laser technology to expert injectables and skin-restoring facials, every treatment is tailored to your unique skin and delivered with clinical precision."
+            eyebrow="Signature Treatments"
+            title="Precision Care for Every Concern"
+            description="Each treatment is selected by our clinical team, performed with medical-grade protocols, and tailored to your unique skin."
           />
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
             {featuredTreatments.map((treatment, i) => (
               <FadeIn key={treatment.title} delay={i * 0.08}>
-                <Link href={treatment.href} className="block group bg-warm-white border border-sand/60 hover:border-champagne/30 transition-all duration-500 hover:shadow-[0_8px_30px_rgba(0,0,0,0.04)]">
+                <Link href={treatment.href} className="block group bg-warm-white border border-sand/40 hover:border-champagne/20 transition-all duration-600 hover:shadow-[0_16px_48px_rgba(0,0,0,0.06)]">
                   {treatment.photo ? (
                     <div className="relative aspect-[3/2] overflow-hidden bg-sand-light">
                       <Image
                         src={treatment.photo}
                         alt={treatment.image}
                         fill
-                        className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                        className="object-cover object-center group-hover:scale-[1.04] transition-transform duration-[800ms] ease-out"
                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                         quality={100}
                       />
+                      <div className="absolute inset-0 bg-gradient-to-t from-charcoal/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     </div>
                   ) : (
                     <ImagePlaceholder
@@ -354,15 +346,17 @@ export default function HomePage() {
                       aspectRatio="aspect-[3/2]"
                     />
                   )}
-                  <div className="p-6">
-                    <h3 className="font-[family-name:var(--font-heading)] text-xl font-medium text-charcoal mb-1">
-                      {treatment.title}
-                    </h3>
-                    <p className="text-xs text-champagne-dark tracking-wide mb-1">
+                  <div className="p-6 md:p-7">
+                    <div className="flex items-start justify-between gap-3 mb-2">
+                      <h3 className="font-[family-name:var(--font-heading)] text-xl md:text-[1.35rem] font-medium text-charcoal leading-snug">
+                        {treatment.title}
+                      </h3>
+                      <span className="text-xs font-medium text-champagne-dark whitespace-nowrap mt-1">
+                        {treatment.price}
+                      </span>
+                    </div>
+                    <p className="text-[0.7rem] text-taupe-dark tracking-[0.12em] uppercase mb-3">
                       {treatment.subtitle}
-                    </p>
-                    <p className="text-sm font-medium text-charcoal mb-3">
-                      {treatment.price}
                     </p>
                     <p className="text-sm text-charcoal-muted leading-relaxed">
                       {treatment.description}
@@ -374,15 +368,15 @@ export default function HomePage() {
           </div>
 
           <FadeIn delay={0.3}>
-            <div className="text-center mt-12">
+            <div className="text-center mt-14">
               <Link
                 href="/services"
-                className="inline-flex items-center text-sm text-charcoal tracking-wider border-b border-charcoal/30 pb-1 hover:border-champagne-dark hover:text-champagne-dark transition-colors group"
+                className="inline-flex items-center text-sm text-charcoal tracking-[0.12em] uppercase border-b border-charcoal/20 pb-1.5 hover:border-champagne-dark hover:text-champagne-dark transition-colors duration-300 group"
               >
-                View All Services
+                View All Treatments & Pricing
                 <ArrowRight
                   size={14}
-                  className="ml-2 group-hover:translate-x-1 transition-transform"
+                  className="ml-2 group-hover:translate-x-1.5 transition-transform"
                 />
               </Link>
             </div>
@@ -391,12 +385,12 @@ export default function HomePage() {
       </section>
 
       {/* ========== REAL RESULTS ========== */}
-      <section className="py-20 md:py-28 bg-warm-white">
+      <section className="py-24 md:py-32 bg-warm-white">
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading
-            eyebrow="Real Results"
-            title="See the Difference"
-            description="Real patient transformations from our clinical team. Every result reflects personalized care, medical-grade treatments, and a commitment to your skin health."
+            eyebrow="Proven Results"
+            title="Transformations You Can Trust"
+            description="Every result reflects a real patient, a personalized plan, and clinical expertise. No filters, no retouching."
           />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -670,23 +664,23 @@ export default function HomePage() {
       </section>
 
       {/* ========== WHY CHOOSE US ========== */}
-      <section className="py-20 md:py-28 bg-ivory">
+      <section className="py-24 md:py-32 bg-ivory">
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading
-            eyebrow="Why Clearskin & Wellness"
-            title="More Than a Med Spa"
-            description="We bridge the gap between clinical dermatology and cosmetic aesthetics, giving you access to treatments that are both beautiful and medically sound."
+            eyebrow="The Difference"
+            title="Not Your Typical Med Spa"
+            description="We don't just perform treatments. We combine board-certified dermatology oversight with advanced aesthetic technology to deliver results that are both beautiful and clinically sound."
           />
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {whyChooseUs.map((item, i) => (
               <FadeIn key={item.title} delay={i * 0.1}>
-                <div className="text-center">
-                  <div className="w-14 h-14 mx-auto mb-5 bg-sand-light border border-sand flex items-center justify-center">
+                <div className="text-center group">
+                  <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-sand-light to-sand/50 border border-sand/60 flex items-center justify-center group-hover:border-champagne/30 transition-colors duration-500">
                     <item.icon
                       size={24}
                       className="text-champagne-dark"
-                      strokeWidth={1.5}
+                      strokeWidth={1.3}
                     />
                   </div>
                   <h3 className="font-[family-name:var(--font-heading)] text-lg font-medium text-charcoal mb-3">
@@ -836,55 +830,65 @@ export default function HomePage() {
       </section>
 
       {/* ========== DERMATOLOGY-BACKED EXPERTISE ========== */}
-      <section className="py-20 md:py-28 bg-ivory">
+      <section className="py-24 md:py-32 bg-ivory">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <FadeIn direction="left">
-              <div className="aspect-[4/3] relative w-full overflow-hidden bg-sand-light">
-                <Image
-                  src="/images/team/jeffery-and-anay.png"
-                  alt="Dr. Jeffrey Scales and Anay Castro, clinical leadership"
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  quality={100}
-                />
+              <div className="relative">
+                <div className="aspect-[4/3] relative w-full overflow-hidden bg-sand-light">
+                  <Image
+                    src="/images/team/jeffery-and-anay.png"
+                    alt="Dr. Jeffrey Scales and Anay Castro, clinical leadership"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    quality={100}
+                  />
+                </div>
+                {/* Credential badge overlay */}
+                <div className="absolute -bottom-6 -right-4 lg:-right-8 bg-charcoal text-warm-white px-6 py-4 shadow-xl">
+                  <p className="text-[0.65rem] uppercase tracking-[0.2em] text-champagne mb-1">Medical Director</p>
+                  <p className="text-sm font-medium">Dr. Jeffrey Scales, MD</p>
+                  <p className="text-xs text-taupe-light">Board-Certified Dermatologist</p>
+                </div>
               </div>
             </FadeIn>
 
             <FadeIn direction="right">
               <div>
-                <span className="text-xs uppercase tracking-[0.25em] text-champagne-dark font-medium">
-                  Our Foundation
-                </span>
-                <h2 className="font-[family-name:var(--font-heading)] text-3xl md:text-4xl font-light text-charcoal mt-3 mb-6 leading-tight">
-                  Cosmetic Care with the Confidence of Dermatology
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="premium-rule" />
+                  <span className="text-xs uppercase tracking-[0.25em] text-champagne-dark font-medium">
+                    Our Foundation
+                  </span>
+                </div>
+                <h2 className="font-[family-name:var(--font-heading)] text-3xl md:text-4xl font-light text-charcoal mb-6 leading-tight">
+                  Where Cosmetic Artistry Meets Medical Authority
                 </h2>
-                <p className="text-charcoal-muted leading-relaxed mb-5">
-                  Clearskin & Wellness Aesthetics is the cosmetic and skin
-                  wellness extension of North Carolina Center for Dermatology —
-                  a trusted Durham practice led by Dr. Jeffrey Scales, a
-                  board-certified dermatologist.
+                <p className="text-charcoal-muted leading-[1.8] mb-5">
+                  Clearskin & Wellness Aesthetics is the cosmetic extension of
+                  North Carolina Center for Dermatology, a trusted Durham
+                  practice led by Dr. Jeffrey Scales. Every treatment is
+                  informed by board-certified dermatology expertise.
                 </p>
-                <p className="text-charcoal-muted leading-relaxed mb-8">
-                  This means every treatment you receive is informed by deep
-                  medical knowledge of the skin. Your provider team doesn&apos;t
-                  just know aesthetics. They understand dermatology at its core.
-                  That&apos;s a level of confidence most cosmetic practices
-                  simply can&apos;t offer.
+                <p className="text-charcoal-muted leading-[1.8] mb-8">
+                  Your provider team doesn&apos;t just know aesthetics. They
+                  understand the science of skin at its deepest level.
+                  That&apos;s a level of confidence most practices cannot offer.
                 </p>
 
-                <div className="space-y-3 mb-8">
+                <div className="grid grid-cols-2 gap-x-6 gap-y-4 mb-8">
                   {[
-                    "Board-certified dermatologist oversight",
-                    "Medical-grade treatment protocols",
-                    "Skin health prioritized alongside aesthetics",
-                    "Comprehensive team of licensed specialists",
+                    "Board-certified oversight",
+                    "Medical-grade protocols",
+                    "Skin health first",
+                    "Licensed specialists",
                   ].map((item) => (
-                    <div key={item} className="flex items-start gap-3">
+                    <div key={item} className="flex items-start gap-2.5">
                       <CheckCircle2
-                        size={18}
+                        size={16}
                         className="text-champagne-dark mt-0.5 shrink-0"
+                        strokeWidth={1.5}
                       />
                       <span className="text-sm text-charcoal">{item}</span>
                     </div>
@@ -893,12 +897,12 @@ export default function HomePage() {
 
                 <Link
                   href="/staff"
-                  className="inline-flex items-center text-sm text-charcoal tracking-wider border-b border-charcoal/30 pb-1 hover:border-champagne-dark hover:text-champagne-dark transition-colors group"
+                  className="inline-flex items-center text-sm text-charcoal tracking-[0.12em] uppercase border-b border-charcoal/20 pb-1.5 hover:border-champagne-dark hover:text-champagne-dark transition-colors duration-300 group"
                 >
                   Meet Our Team
                   <ArrowRight
                     size={14}
-                    className="ml-2 group-hover:translate-x-1 transition-transform"
+                    className="ml-2 group-hover:translate-x-1.5 transition-transform"
                   />
                 </Link>
               </div>
@@ -908,50 +912,51 @@ export default function HomePage() {
       </section>
 
       {/* ========== PROVIDER PREVIEW ========== */}
-      <section className="py-20 md:py-28 bg-warm-white">
+      <section className="py-24 md:py-32 bg-warm-white">
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading
-            eyebrow="Our Team"
-            title="Experts Who Understand Skin Deeply"
-            description="Our team of licensed dermatology and aesthetics specialists brings clinical precision, compassion, and a commitment to serving all skin types."
+            eyebrow="Your Providers"
+            title="The Experts Behind Your Results"
+            description="Licensed specialists with deep clinical training, united by a commitment to every skin type, every concern, every patient."
           />
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
             {providerPreview.map((provider, i) => (
               <FadeIn key={provider.name} delay={i * 0.1}>
-                <div className="group">
-                  <div className="aspect-[3/4] relative w-full overflow-hidden bg-sand-light mb-4 group-hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)] transition-shadow duration-500">
+                <Link href="/staff" className="block group">
+                  <div className="aspect-[3/4] relative w-full overflow-hidden bg-sand-light mb-5 group-hover:shadow-[0_12px_40px_rgba(0,0,0,0.08)] transition-all duration-500">
                     <Image
                       src={provider.image}
                       alt={provider.name}
                       fill
-                      className="object-cover object-top"
+                      className="object-cover object-top group-hover:scale-[1.03] transition-transform duration-700"
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                       quality={100}
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-charcoal/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   </div>
                   <h3 className="font-[family-name:var(--font-heading)] text-lg font-medium text-charcoal">
                     {provider.name}
                   </h3>
-                  <p className="text-sm text-champagne-dark">{provider.title}</p>
-                  <p className="text-xs text-charcoal-muted mt-1">
+                  <p className="text-xs text-champagne-dark tracking-wide uppercase mt-1">{provider.title}</p>
+                  <p className="text-xs text-charcoal-muted mt-1.5">
                     {provider.credential}
                   </p>
-                </div>
+                </Link>
               </FadeIn>
             ))}
           </div>
 
           <FadeIn delay={0.3}>
-            <div className="text-center mt-12">
+            <div className="text-center mt-14">
               <Link
                 href="/staff"
-                className="inline-flex items-center text-sm text-charcoal tracking-wider border-b border-charcoal/30 pb-1 hover:border-champagne-dark hover:text-champagne-dark transition-colors group"
+                className="inline-flex items-center text-sm text-charcoal tracking-[0.12em] uppercase border-b border-charcoal/20 pb-1.5 hover:border-champagne-dark hover:text-champagne-dark transition-colors duration-300 group"
               >
                 Meet the Full Team
                 <ArrowRight
                   size={14}
-                  className="ml-2 group-hover:translate-x-1 transition-transform"
+                  className="ml-2 group-hover:translate-x-1.5 transition-transform"
                 />
               </Link>
             </div>
@@ -961,51 +966,53 @@ export default function HomePage() {
 
 
 
-      {/* ========== CONFIDENCE / REASSURANCE ========== */}
-      <section className="py-20 md:py-28 bg-cream">
-        <div className="max-w-3xl mx-auto px-6 text-center">
+      {/* ========== YOUR EXPERIENCE ========== */}
+      <section className="py-24 md:py-32 bg-charcoal text-warm-white">
+        <div className="max-w-4xl mx-auto px-6 text-center">
           <FadeIn>
-            <span className="text-xs uppercase tracking-[0.25em] text-champagne-dark font-medium">
-              Your Experience
-            </span>
-            <h2 className="font-[family-name:var(--font-heading)] text-3xl md:text-4xl font-light text-charcoal mt-3 mb-6 leading-tight">
-              What to Expect When You Visit
+            <div className="flex items-center justify-center gap-3 mb-4">
+              <div className="premium-rule" />
+              <span className="text-xs uppercase tracking-[0.3em] text-champagne font-medium">
+                Your Experience
+              </span>
+              <div className="premium-rule" />
+            </div>
+            <h2 className="font-[family-name:var(--font-heading)] text-3xl md:text-4xl lg:text-5xl font-light mt-3 mb-6 leading-tight">
+              From Consultation to Confidence
             </h2>
-            <p className="text-charcoal-muted leading-relaxed mb-10">
-              Whether it&apos;s your first consultation or your tenth visit,
-              your experience is designed to feel calm, private, and
-              personalized. We take time to listen, explain, and ensure
-              you&apos;re comfortable with every step of your care.
+            <p className="text-taupe-light leading-[1.8] mb-14 max-w-2xl mx-auto">
+              Every visit is designed to feel calm, private, and entirely
+              personalized. We listen first, then build a plan around you.
             </p>
           </FadeIn>
 
-          <div className="grid sm:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-3 gap-8 lg:gap-12">
             {[
               {
                 step: "01",
-                title: "Consultation",
-                desc: "We begin with a thorough skin assessment and an honest conversation about your goals, options, and expectations.",
+                title: "Consult",
+                desc: "A thorough skin assessment and honest conversation about your goals, options, and what to expect.",
               },
               {
                 step: "02",
-                title: "Treatment",
-                desc: "Your treatment is performed by a licensed specialist using medical-grade tools and protocols, in a calm and private setting.",
+                title: "Treat",
+                desc: "Your treatment is performed by a licensed specialist with medical-grade protocols, in a calm private setting.",
               },
               {
                 step: "03",
-                title: "Aftercare",
-                desc: "You leave with clear aftercare guidance and a follow-up plan. We're here if you need us between visits.",
+                title: "Thrive",
+                desc: "Clear aftercare guidance, a follow-up plan, and ongoing support between visits.",
               },
             ].map((item, i) => (
               <FadeIn key={item.step} delay={i * 0.12}>
                 <div>
-                  <span className="text-2xl font-[family-name:var(--font-heading)] text-champagne font-light">
+                  <span className="text-3xl font-[family-name:var(--font-heading)] text-champagne/40 font-light">
                     {item.step}
                   </span>
-                  <h3 className="font-[family-name:var(--font-heading)] text-lg font-medium text-charcoal mt-2 mb-2">
+                  <h3 className="font-[family-name:var(--font-heading)] text-xl font-medium text-warm-white mt-3 mb-3">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-charcoal-muted leading-relaxed">
+                  <p className="text-sm text-taupe-light leading-relaxed">
                     {item.desc}
                   </p>
                 </div>
