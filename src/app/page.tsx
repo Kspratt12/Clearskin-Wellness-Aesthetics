@@ -22,7 +22,7 @@ const featuredTreatments = [
     title: "Neuromodulators",
     subtitle: "Botox, Dysport, Xeomin & Daxxify",
     description:
-      "Precisely placed to soften lines across the forehead, brows, and eyes. Results in two weeks, lasting months.",
+      "Soften forehead lines, crow's feet, and frown lines with precision placement. Visible smoothing in 5-7 days. Lasts 3-4 months.",
     image: "Facial treatment, neuromodulator injection",
     photo: "/images/services/neuromodulators.png",
     href: "/services#injectables",
@@ -32,7 +32,7 @@ const featuredTreatments = [
     title: "Dermal Fillers",
     subtitle: "Volume Restoration & Contouring",
     description:
-      "Restore volume in the lips, cheeks, jawline, and under-eyes with premium hyaluronic acid fillers mapped to your anatomy.",
+      "Lips, cheeks, jawline, under-eyes. Premium hyaluronic acid fillers placed by anatomy, not guesswork. Results last 6-18 months.",
     image: "Dermal filler treatment close-up",
     photo: "/images/services/dermal-fillers.png",
     href: "/services#injectables",
@@ -42,7 +42,7 @@ const featuredTreatments = [
     title: "Morpheus8",
     subtitle: "Microneedling + Radiofrequency",
     description:
-      "Deep collagen remodeling that tightens, firms, and refines contours on face and body. Visible results after one session.",
+      "Radiofrequency microneedling that remodels collagen at the deepest layers. Tighter skin, refined contours. Visible after one session.",
     image: "Morpheus8 device treatment on face",
     photo: "/images/services/morpheus8.png",
     href: "/services#advanced",
@@ -62,7 +62,7 @@ const featuredTreatments = [
     title: "Medical Microneedling",
     subtitle: "SkinPen Collagen Induction",
     description:
-      "Controlled micro-injuries trigger your skin's own collagen production. Effective for scarring, fine lines, and texture.",
+      "Medical-grade SkinPen triggers your skin's own collagen cycle. Proven for acne scarring, fine lines, and uneven texture.",
     image: "SkinPen microneedling close-up",
     photo: "/images/services/medical-microneedling.png",
     href: "/services#rejuvenation",
@@ -72,7 +72,7 @@ const featuredTreatments = [
     title: "Laser Hair Removal",
     subtitle: "Long-Term Hair Reduction",
     description:
-      "Targeted laser energy for lasting smoothness on face, bikini, underarms, legs, and back. Safe for all skin types.",
+      "Face, bikini, underarms, legs, back. Lasting smoothness with laser precision. Proven safe across all skin tones.",
     image: "Laser hair removal treatment",
     href: "/services#advanced",
     photo: "/images/services/laser-hair-removal.png",
@@ -136,6 +136,14 @@ const providerPreview = [
 
 const heroImages = [
   {
+    src: "/images/clinic/mainhero.png",
+    alt: "Patient receiving expert injectable treatment at Clearskin & Wellness Aesthetics",
+  },
+  {
+    src: "/images/clinic/hero3.png",
+    alt: "Radiant, healthy skin achieved through clinical skincare",
+  },
+  {
     src: "/images/clinic/hero.png",
     alt: "Clearskin & Wellness Aesthetics team in front of clinic",
   },
@@ -146,10 +154,6 @@ const heroImages = [
   {
     src: "/images/clinic/lobby.png",
     alt: "Clearskin & Wellness Aesthetics lobby with artwork",
-  },
-  {
-    src: "/images/clinic/ribbon-cutting.png",
-    alt: "Clearskin & Wellness Aesthetics grand opening ribbon cutting",
   },
 ];
 
@@ -191,9 +195,9 @@ export default function HomePage() {
                 transition={{ duration: 0.7, delay: 0.2 }}
                 className="font-[family-name:var(--font-heading)] text-4xl md:text-5xl lg:text-[3.5rem] xl:text-6xl font-light text-charcoal leading-[1.08] mb-7"
               >
-                Your Skin Deserves
+                Dermatology-Led.
                 <br />
-                <span className="italic">Expert Hands</span>
+                <span className="italic">Results-Driven.</span>
               </motion.h1>
 
               <motion.p
@@ -202,9 +206,9 @@ export default function HomePage() {
                 transition={{ duration: 0.6, delay: 0.35 }}
                 className="text-charcoal-muted leading-[1.8] mb-4 text-[0.95rem] max-w-md"
               >
-                Advanced cosmetic treatments guided by board-certified
-                dermatology. Every protocol built on clinical evidence,
-                every result backed by real skin science.
+                Cosmetic treatments built on board-certified dermatology,
+                not trends. Every protocol is clinical. Every provider
+                is licensed. Every outcome is measurable.
               </motion.p>
 
               <motion.div
@@ -330,8 +334,8 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading
             eyebrow="Signature Treatments"
-            title="What We Do Best"
-            description="Clinical-grade treatments selected, performed, and overseen by dermatology specialists. Not a menu. A protocol."
+            title="Clinical-Grade. Provider-Led."
+            description="Every treatment on this page is selected, performed, and overseen by dermatology-trained specialists."
           />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
@@ -403,8 +407,8 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading
             eyebrow="Proven Results"
-            title="Transformations You Can Trust"
-            description="Every result reflects a real patient, a personalized plan, and clinical expertise. No filters, no retouching."
+            title="Outcomes, Not Promises"
+            description="Real patients. Real protocols. Unretouched photos from our clinical team."
           />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -683,8 +687,8 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading
             eyebrow="The Difference"
-            title="Not Your Typical Med Spa"
-            description="Board-certified dermatology oversight. Medical-grade technology. Results that are both beautiful and clinically sound."
+            title="The Standard Is Higher Here"
+            description="Board-certified dermatology oversight. Medical-grade protocols. Outcomes that are both beautiful and clinically sound."
           />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
@@ -931,8 +935,8 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading
             eyebrow="Your Providers"
-            title="Who Treats You Matters"
-            description="Dermatology-trained specialists. Each licensed. Each experienced. Each chosen for this team."
+            title="Your Providers. Your Outcomes."
+            description="Every provider on this team is licensed, dermatology-trained, and hand-selected."
           />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
