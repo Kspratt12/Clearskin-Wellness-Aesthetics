@@ -246,6 +246,27 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* Treatment Room Banner */}
+      <section className="relative">
+        <div className="relative aspect-[21/7] overflow-hidden bg-sand-light">
+          <Image
+            src="/images/clinic/treatment-hero.png"
+            alt="CWA treatment room with Morpheus8 and Triton technology"
+            fill
+            className="object-cover object-center"
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-charcoal/40 to-transparent" />
+          <div className="absolute inset-0 flex items-center">
+            <div className="max-w-7xl mx-auto px-6 w-full">
+              <p className="text-warm-white text-sm md:text-base font-medium max-w-xs">
+                Advanced technology. Expert hands. Real results.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Category Quick Nav */}
       <section className="bg-ivory border-y border-sand/50 sticky top-20 z-30">
         <div className="max-w-7xl mx-auto px-6">

@@ -309,7 +309,7 @@ export default function HomePage() {
             description="Real patient transformations from our clinical team. Every result reflects personalized care, medical-grade treatments, and a commitment to your skin health."
           />
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
                 src: "/images/results/before-after-1.png",
@@ -350,6 +350,11 @@ export default function HomePage() {
                 src: "/images/results/before-after-8.png",
                 alt: "Dermal filler results — before and after",
                 label: "Dermal Filler Enhancement",
+              },
+              {
+                src: "/images/results/before-after-9.png",
+                alt: "Pore refinement and skin texture results — before and after",
+                label: "Pore Refinement & Skin Texture",
               },
             ].map((result, i) => (
               <FadeIn key={result.src} delay={i * 0.06}>
@@ -408,6 +413,10 @@ export default function HomePage() {
               { src: "/images/videos/reel-2.mp4", label: "Results in Motion" },
               { src: "/images/videos/reel-3.mp4", label: "Behind the Treatment" },
               { src: "/images/videos/reel-4.mp4", label: "Patient Experience" },
+              { src: "/images/videos/tiktok-1.mp4", label: "Quick Tips" },
+              { src: "/images/videos/tiktok-2.mp4", label: "Treatment Day" },
+              { src: "/images/videos/tiktok-3.mp4", label: "Skin Transformation" },
+              { src: "/images/videos/tiktok-4.mp4", label: "Expert Care" },
             ].map((video, i) => (
               <FadeIn key={video.src} delay={i * 0.1}>
                 <div className="group">
@@ -447,14 +456,26 @@ export default function HomePage() {
           </div>
 
           <FadeIn delay={0.3}>
-            <div className="text-center mt-12">
+            <div className="text-center mt-12 flex flex-col sm:flex-row items-center justify-center gap-6">
               <a
                 href="https://www.instagram.com/clearskinwellnessa/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center text-sm text-charcoal tracking-wider border-b border-charcoal/30 pb-1 hover:border-champagne-dark hover:text-champagne-dark transition-colors group"
               >
-                Follow Us on Instagram
+                Follow on Instagram
+                <ArrowRight
+                  size={14}
+                  className="ml-2 group-hover:translate-x-1 transition-transform"
+                />
+              </a>
+              <a
+                href="https://www.tiktok.com/@clearskin.wellness"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-sm text-charcoal tracking-wider border-b border-charcoal/30 pb-1 hover:border-champagne-dark hover:text-champagne-dark transition-colors group"
+              >
+                Follow on TikTok
                 <ArrowRight
                   size={14}
                   className="ml-2 group-hover:translate-x-1 transition-transform"
