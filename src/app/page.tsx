@@ -212,7 +212,7 @@ export default function HomePage() {
               >
                 Durham&apos;s only aesthetics practice built inside a
                 dermatology office. Every injectable, laser, and facial is
-                overseen by a board-certified dermatologist &mdash; not a
+                overseen by a board-certified dermatologist, not a
                 med spa with a medical label.
               </motion.p>
 
