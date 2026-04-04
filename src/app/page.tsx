@@ -693,7 +693,7 @@ export default function HomePage() {
             ].map((video, i) => (
               <FadeIn key={video.src} delay={i * 0.1}>
                 <div className="group">
-                  <div className="relative aspect-[9/16] max-h-[70vh] sm:max-h-none overflow-hidden bg-charcoal rounded-sm">
+                  <div className="relative aspect-[9/16] max-h-[70vh] sm:max-h-none overflow-hidden bg-charcoal rounded-sm mx-auto max-w-[280px] sm:max-w-none">
                     <video
                       src={video.src}
                       playsInline
