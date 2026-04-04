@@ -173,88 +173,100 @@ export default function HomePage() {
     <>
       {/* ========== HERO ========== */}
       <section className="relative overflow-hidden">
-        <div className="grid lg:grid-cols-2 min-h-[90vh]">
+        <div className="grid lg:grid-cols-[1fr_1.15fr] min-h-[92vh]">
           {/* Left — Copy */}
-          <div className="flex items-center px-6 sm:px-10 md:px-14 lg:px-20 py-20 lg:py-0 order-2 lg:order-1 bg-gradient-to-br from-ivory via-warm-white to-sand-light/30">
-            <div className="max-w-xl">
+          <div className="flex items-center px-6 sm:px-10 md:px-14 lg:px-20 xl:px-24 py-20 lg:py-0 order-2 lg:order-1">
+            <div className="max-w-[480px]">
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                className="flex items-center gap-3 mb-8"
+                transition={{ duration: 0.6, delay: 0.1 }}
+                className="flex items-center gap-3 mb-10"
               >
-                <div className="premium-rule" />
-                <span className="text-xs uppercase tracking-[0.35em] text-champagne-dark font-medium">
-                  Durham, North Carolina
+                <div className="w-8 h-px bg-champagne-dark" />
+                <span className="text-[0.65rem] uppercase tracking-[0.4em] text-champagne-dark font-medium">
+                  Durham, NC
                 </span>
               </motion.div>
 
               <motion.h1
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 0.2 }}
-                className="font-[family-name:var(--font-heading)] text-4xl md:text-5xl lg:text-[3.5rem] xl:text-6xl font-light text-charcoal leading-[1.08] mb-7"
+                className="font-[family-name:var(--font-heading)] text-[2.5rem] md:text-5xl lg:text-[3.25rem] xl:text-[3.75rem] font-light text-charcoal leading-[1.06] mb-8"
               >
-                Dermatology-Led.
+                Precision Aesthetics,
                 <br />
-                <span className="italic">Results-Driven.</span>
+                <span className="italic">Dermatology Authority</span>
               </motion.h1>
 
               <motion.p
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.35 }}
-                className="text-charcoal-muted leading-[1.8] mb-4 text-[0.95rem] max-w-md"
+                className="text-charcoal-muted leading-[1.85] mb-5 text-[0.9rem] max-w-[420px]"
               >
-                Cosmetic treatments built on board-certified dermatology,
-                not trends. Every protocol is clinical. Every provider
-                is licensed. Every outcome is measurable.
+                Board-certified dermatology meets advanced cosmetic treatment.
+                Every protocol is clinical. Every provider is licensed.
+                Every outcome is measurable.
               </motion.p>
 
+              {/* Trust Signals */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.45 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.45 }}
                 className="flex items-center gap-4 mb-10"
               >
-                <div className="flex items-center gap-2 text-xs text-taupe-dark tracking-wide">
-                  <Shield size={12} className="text-champagne-dark" />
-                  NC Center for Dermatology
+                <div className="flex items-center gap-2">
+                  <Shield size={13} className="text-champagne-dark" strokeWidth={1.5} />
+                  <span className="text-[0.7rem] text-taupe-dark tracking-wide">NC Center for Dermatology</span>
                 </div>
                 <div className="w-px h-3 bg-sand" />
-                <div className="flex items-center gap-1.5">
+                <div className="flex items-center gap-1">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={10} className="fill-champagne text-champagne" />
+                    <Star key={i} size={9} className="fill-champagne text-champagne" />
                   ))}
-                  <span className="text-xs text-taupe-dark ml-1">Google Reviews</span>
+                  <span className="text-[0.7rem] text-taupe-dark ml-1.5">5.0 Google</span>
                 </div>
               </motion.div>
 
+              {/* CTAs */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.55 }}
-                className="flex flex-col sm:flex-row gap-4"
+                className="flex flex-col sm:flex-row gap-3.5"
               >
                 <a
                   href="https://nccdermatology.myaestheticrecord.com/online-booking/book-appointment"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center bg-charcoal text-warm-white px-10 py-4 text-sm tracking-[0.15em] uppercase font-medium hover:bg-charcoal-light transition-all duration-300 group"
+                  className="inline-flex items-center justify-center bg-charcoal text-warm-white px-9 py-[15px] text-[0.78rem] tracking-[0.18em] uppercase font-medium hover:bg-charcoal-light transition-all duration-300 group"
                 >
-                  Book a Consultation
+                  Book Consultation
                   <ArrowRight
-                    size={15}
-                    className="ml-3 group-hover:translate-x-1 transition-transform"
+                    size={14}
+                    className="ml-2.5 group-hover:translate-x-1 transition-transform"
                   />
                 </a>
                 <Link
                   href="/services"
-                  className="inline-flex items-center justify-center border border-charcoal/20 text-charcoal px-10 py-4 text-sm tracking-[0.12em] uppercase hover:border-charcoal/40 hover:bg-sand-light/50 transition-all duration-300"
+                  className="inline-flex items-center justify-center border border-charcoal/15 text-charcoal px-9 py-[15px] text-[0.78rem] tracking-[0.14em] uppercase hover:border-charcoal/35 hover:bg-sand-light/40 transition-all duration-300"
                 >
-                  View Treatments
+                  View Treatments & Pricing
                 </Link>
               </motion.div>
+
+              {/* Micro-credential */}
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.7 }}
+                className="text-[0.65rem] text-taupe tracking-wide mt-8"
+              >
+                Led by Dr. Jeffrey Scales, MD &middot; Board-Certified Dermatologist
+              </motion.p>
             </div>
           </div>
 
@@ -262,15 +274,18 @@ export default function HomePage() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.2 }}
-            className="order-1 lg:order-2 relative h-[55vh] lg:h-auto overflow-hidden bg-sand-light"
+            transition={{ duration: 1.2, delay: 0.15 }}
+            className="order-1 lg:order-2 relative h-[56vh] lg:h-auto overflow-hidden bg-charcoal/5"
           >
             {heroImages.map((img, i) => (
               <motion.div
                 key={img.src}
                 initial={false}
-                animate={{ opacity: i === currentHero ? 1 : 0 }}
-                transition={{ duration: 1.8, ease: "easeInOut" }}
+                animate={{
+                  opacity: i === currentHero ? 1 : 0,
+                  scale: i === currentHero ? 1 : 1.03,
+                }}
+                transition={{ duration: 2, ease: "easeInOut" }}
                 className="absolute inset-0"
               >
                 <Image
@@ -278,26 +293,27 @@ export default function HomePage() {
                   alt={img.alt}
                   fill
                   className="object-cover object-center"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  sizes="(max-width: 1024px) 100vw, 55vw"
                   priority={i === 0}
                   quality={100}
                 />
               </motion.div>
             ))}
 
-            {/* Subtle gradient overlay for depth */}
-            <div className="absolute inset-0 bg-gradient-to-t from-charcoal/10 via-transparent to-transparent pointer-events-none" />
+            {/* Cinematic gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-charcoal/15 via-transparent to-charcoal/5 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-r from-ivory/10 via-transparent to-transparent pointer-events-none lg:block hidden" />
 
             {/* Slide Indicators */}
-            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2.5 z-10">
+            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3 z-10">
               {heroImages.map((_, i) => (
                 <button
                   key={i}
                   onClick={() => setCurrentHero(i)}
-                  className={`h-[3px] rounded-full transition-all duration-500 ${
+                  className={`rounded-full transition-all duration-600 ${
                     i === currentHero
-                      ? "bg-champagne w-8"
-                      : "bg-warm-white/40 w-4 hover:bg-warm-white/70"
+                      ? "bg-warm-white w-7 h-[2px]"
+                      : "bg-warm-white/30 w-3.5 h-[2px] hover:bg-warm-white/60"
                   }`}
                   aria-label={`View image ${i + 1}`}
                 />
