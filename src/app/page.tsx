@@ -330,8 +330,8 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading
             eyebrow="Signature Treatments"
-            title="Precision Care for Every Concern"
-            description="Each treatment is selected by our clinical team, performed with medical-grade protocols, and tailored to your unique skin."
+            title="What We Do Best"
+            description="Clinical-grade treatments selected, performed, and overseen by dermatology specialists. Not a menu. A protocol."
           />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
@@ -645,16 +645,16 @@ export default function HomePage() {
                 href="https://www.instagram.com/clearskinwellnessa/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center text-sm text-charcoal tracking-wider border-b border-charcoal/30 pb-1 hover:border-champagne-dark hover:text-champagne-dark transition-colors group"
+                className="inline-flex items-center text-sm text-charcoal tracking-[0.1em] uppercase border-b border-charcoal/20 pb-1.5 hover:border-champagne-dark hover:text-champagne-dark transition-colors duration-300 group"
               >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="mr-2 text-champagne-dark">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="mr-2 text-champagne-dark">
                   <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
                   <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
                   <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
                 </svg>
-                Follow on Instagram
+                Instagram
                 <ArrowRight
-                  size={14}
+                  size={12}
                   className="ml-2 group-hover:translate-x-1 transition-transform"
                 />
               </a>
@@ -662,14 +662,14 @@ export default function HomePage() {
                 href="https://www.tiktok.com/@clearskin.wellness"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center text-sm text-charcoal tracking-wider border-b border-charcoal/30 pb-1 hover:border-champagne-dark hover:text-champagne-dark transition-colors group"
+                className="inline-flex items-center text-sm text-charcoal tracking-[0.1em] uppercase border-b border-charcoal/20 pb-1.5 hover:border-champagne-dark hover:text-champagne-dark transition-colors duration-300 group"
               >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" className="mr-2 text-champagne-dark">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" className="mr-2 text-champagne-dark">
                   <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 0 0-.79-.05A6.34 6.34 0 0 0 3.15 15a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.71a8.2 8.2 0 0 0 4.76 1.52v-3.4a4.85 4.85 0 0 1-1-.14z" />
                 </svg>
-                Follow on TikTok
+                TikTok
                 <ArrowRight
-                  size={14}
+                  size={12}
                   className="ml-2 group-hover:translate-x-1 transition-transform"
                 />
               </a>
@@ -684,7 +684,7 @@ export default function HomePage() {
           <SectionHeading
             eyebrow="The Difference"
             title="Not Your Typical Med Spa"
-            description="We don't just perform treatments. We combine board-certified dermatology oversight with advanced aesthetic technology to deliver results that are both beautiful and clinically sound."
+            description="Board-certified dermatology oversight. Medical-grade technology. Results that are both beautiful and clinically sound."
           />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
@@ -831,9 +831,9 @@ export default function HomePage() {
                 href="https://g.co/kgs/clearskinwellness"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center text-sm text-charcoal tracking-wider border-b border-charcoal/30 pb-1 hover:border-champagne-dark hover:text-champagne-dark transition-colors group"
+                className="inline-flex items-center text-sm text-charcoal tracking-[0.12em] uppercase border-b border-charcoal/20 pb-1.5 hover:border-champagne-dark hover:text-champagne-dark transition-colors duration-300 group"
               >
-                Read More Reviews on Google
+                Read All Reviews on Google
                 <ArrowRight
                   size={14}
                   className="ml-2 group-hover:translate-x-1 transition-transform"
@@ -931,8 +931,8 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6">
           <SectionHeading
             eyebrow="Your Providers"
-            title="The Experts Behind Your Results"
-            description="Licensed specialists with deep clinical training, united by a commitment to every skin type, every concern, every patient."
+            title="Who Treats You Matters"
+            description="Dermatology-trained specialists. Each licensed. Each experienced. Each chosen for this team."
           />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 lg:gap-6">
@@ -993,11 +993,10 @@ export default function HomePage() {
               <div className="premium-rule" />
             </div>
             <h2 className="font-[family-name:var(--font-heading)] text-3xl md:text-4xl lg:text-5xl font-light mt-3 mb-6 leading-tight">
-              From Consultation to Confidence
+              How It Works
             </h2>
             <p className="text-taupe-light leading-[1.8] mb-14 max-w-2xl mx-auto">
-              Every visit is designed to feel calm, private, and entirely
-              personalized. We listen first, then build a plan around you.
+              No pressure. No upselling. A clear path from assessment to outcome, designed around you.
             </p>
           </FadeIn>
 
