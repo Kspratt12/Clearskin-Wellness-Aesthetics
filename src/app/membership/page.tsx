@@ -75,7 +75,7 @@ const tiers: MembershipTier[] = [
     name: "Platinum",
     price: "$275",
     description:
-      "The ultimate membership — maximum savings on every treatment we offer.",
+      "The ultimate membership with maximum savings on every treatment we offer.",
     bonus: "Includes 10 free units of Botox, Daxxify, or Xeomin monthly",
     monthlyChoice: ["Any facial cosmetic service"],
     discounts: [

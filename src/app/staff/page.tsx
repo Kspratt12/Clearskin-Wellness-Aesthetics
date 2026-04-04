@@ -30,12 +30,12 @@ interface Provider {
 const providers: Provider[] = [
   {
     name: "Jeffrey Scales",
-    title: "MD — Medical Director",
+    title: "MD, Medical Director",
     credential: "Board-Certified Dermatologist",
     bio: [
       "Dr. Scales leads Clearskin & Wellness Aesthetics and North Carolina Center for Dermatology with a deep commitment to both clinical excellence and patient care.",
       "He completed his academic journey at Morehouse College, earned his medical degree at The University of Pennsylvania School of Medicine, and trained through a pediatric residency at The University of Chicago and a dermatology residency at Bowman Gray School of Medicine at Wake Forest University.",
-      "This breadth of medical training — spanning pediatrics, dermatology, and private practice leadership — gives him a uniquely comprehensive understanding of the skin across all ages and skin types.",
+      "This breadth of medical training, spanning pediatrics, dermatology, and private practice leadership, gives him a uniquely comprehensive understanding of the skin across all ages and skin types.",
     ],
     specialties: [
       "Medical Dermatology",
@@ -53,7 +53,7 @@ const providers: Provider[] = [
     credential: "Dermatology Physician Assistant & Aesthetic Injector",
     bio: [
       "A bilingual Dermatology Physician Assistant and Aesthetic Injector fluent in both Spanish and English, Anay is dedicated to providing comprehensive, personalized care to a diverse patient base.",
-      "With a strong foundation in both Dermatology and Emergency Medicine, she brings extensive knowledge in diagnosing and treating a wide range of skin conditions — and a skilled, precise approach to cosmetic injectables.",
+      "With a strong foundation in both Dermatology and Emergency Medicine, she brings extensive knowledge in diagnosing and treating a wide range of skin conditions, and a skilled, precise approach to cosmetic injectables.",
     ],
     specialties: [
       "Aesthetic Injectables",
@@ -70,7 +70,7 @@ const providers: Provider[] = [
     credential: "17+ Years in Medical Aesthetics",
     bio: [
       "Specializing in laser technology applications in aesthetic dermatology, Cecilia brings more than 17 years of experience in medical aesthetics to Clearskin & Wellness.",
-      "Her multicultural background as an American-Venezuelan bilingual professional has given her an acute understanding of skin concerns across a wide range of patients — bringing both technical precision and cultural awareness to every treatment.",
+      "Her multicultural background as an American-Venezuelan bilingual professional has given her an acute understanding of skin concerns across a wide range of patients, bringing both technical precision and cultural awareness to every treatment.",
     ],
     specialties: [
       "Laser Treatments",
@@ -85,7 +85,7 @@ const providers: Provider[] = [
     title: "Licensed Esthetician",
     credential: "Aveda Institute Graduate",
     bio: [
-      "An Aveda Institute graduate specializing in customized facial treatments designed to support long-term skin health. Aaron takes a results-driven yet holistic approach — focusing on strengthening the skin barrier, improving texture, and building sustainable treatment plans.",
+      "An Aveda Institute graduate specializing in customized facial treatments designed to support long-term skin health. Aaron takes a results-driven yet holistic approach, focusing on strengthening the skin barrier, improving texture, and building sustainable treatment plans.",
       "He has a strong passion for skin education, particularly in helping clients with melanated skin and men develop a deeper understanding of their skin and how to care for it properly.",
     ],
     specialties: [
@@ -142,6 +142,7 @@ export default function StaffPage() {
             className="object-cover object-center"
             sizes="100vw"
             priority
+            quality={100}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-charcoal/70 via-charcoal/20 to-transparent" />
           <div className="absolute inset-0 flex items-end">
@@ -188,6 +189,7 @@ export default function StaffPage() {
                         fill
                         className="object-cover object-top"
                         sizes="(max-width: 1024px) 100vw, 50vw"
+                        quality={100}
                       />
                     </div>
                   </div>
@@ -272,6 +274,7 @@ export default function StaffPage() {
                       fill
                       className="object-cover object-top"
                       sizes="(max-width: 640px) 100vw, 50vw"
+                      quality={100}
                     />
                   </div>
                   <h3 className="font-[family-name:var(--font-heading)] text-xl font-medium text-charcoal">

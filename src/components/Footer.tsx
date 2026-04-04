@@ -77,7 +77,8 @@ export function Footer() {
                 alt="CWA Logo"
                 width={44}
                 height={44}
-                className="opacity-90"
+                className="opacity-90 mix-blend-screen"
+                unoptimized
               />
               <div>
                 <h4 className="font-[family-name:var(--font-heading)] text-xl font-semibold leading-tight">

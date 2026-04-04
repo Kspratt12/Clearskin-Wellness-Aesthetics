@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import {
   Shield,
   Sparkles,
@@ -23,7 +23,8 @@ const featuredTreatments = [
     subtitle: "Botox, Dysport, Xeomin & Daxxify",
     description:
       "Smooth fine lines and restore a naturally refreshed appearance with expertly placed neuromodulator treatments.",
-    image: "Facial treatment — neuromodulator injection",
+    image: "Facial treatment, neuromodulator injection",
+    photo: "/images/services/neuromodulators.png",
   },
   {
     title: "Dermal Fillers",
@@ -31,6 +32,7 @@ const featuredTreatments = [
     description:
       "Restore youthful volume and enhance facial contours with premium hyaluronic acid fillers, tailored to your anatomy.",
     image: "Dermal filler treatment close-up",
+    photo: "/images/services/dermal-fillers.png",
   },
   {
     title: "Morpheus8",
@@ -45,6 +47,7 @@ const featuredTreatments = [
     description:
       "Address pigmentation, melasma, acne scars, and uneven tone with next-generation picosecond laser technology.",
     image: "Laser skin treatment session",
+    photo: "/images/services/picosure-pro.png",
   },
   {
     title: "Medical Microneedling",
@@ -52,6 +55,7 @@ const featuredTreatments = [
     description:
       "Stimulate your skin's natural collagen production to improve texture, scarring, and fine lines with medical-grade precision.",
     image: "SkinPen microneedling close-up",
+    photo: "/images/services/medical-microneedling.png",
   },
   {
     title: "Laser Hair Removal",
@@ -59,6 +63,7 @@ const featuredTreatments = [
     description:
       "Achieve smooth, lasting results with targeted laser technology for face, body, and all skin types.",
     image: "Laser hair removal treatment",
+    photo: "/images/services/laser-hair-removal.png",
   },
 ];
 
@@ -67,7 +72,7 @@ const whyChooseUs = [
     icon: Shield,
     title: "Dermatology-Backed Care",
     description:
-      "Every treatment is supported by the medical foundation of NC Center for Dermatology — real expertise, not just aesthetics.",
+      "Every treatment is supported by the medical foundation of NC Center for Dermatology. Real expertise, not just aesthetics.",
   },
   {
     icon: Award,
@@ -92,7 +97,7 @@ const whyChooseUs = [
 const providerPreview = [
   {
     name: "Dr. Jeffrey Scales",
-    title: "MD — Medical Director",
+    title: "MD, Medical Director",
     credential: "Board-Certified Dermatologist",
     image: "/images/team/jeffery-scales.png",
   },
@@ -232,26 +237,25 @@ export default function HomePage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="order-1 lg:order-2 relative h-[50vh] lg:h-auto overflow-hidden bg-sand-light"
           >
-            <AnimatePresence mode="wait">
+            {heroImages.map((img, i) => (
               <motion.div
-                key={currentHero}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 1, ease: "easeInOut" }}
+                key={img.src}
+                initial={false}
+                animate={{ opacity: i === currentHero ? 1 : 0 }}
+                transition={{ duration: 1.5, ease: "easeInOut" }}
                 className="absolute inset-0"
               >
                 <Image
-                  src={heroImages[currentHero].src}
-                  alt={heroImages[currentHero].alt}
+                  src={img.src}
+                  alt={img.alt}
                   fill
                   className="object-cover object-center"
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  priority={currentHero === 0}
+                  priority={i === 0}
                   quality={100}
                 />
               </motion.div>
-            </AnimatePresence>
+            ))}
 
             {/* Slide Indicators */}
             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
@@ -320,10 +324,23 @@ export default function HomePage() {
             {featuredTreatments.map((treatment, i) => (
               <FadeIn key={treatment.title} delay={i * 0.08}>
                 <div className="group bg-warm-white border border-sand/60 hover:border-champagne/30 transition-all duration-500 hover:shadow-[0_8px_30px_rgba(0,0,0,0.04)]">
-                  <ImagePlaceholder
-                    label={treatment.image}
-                    aspectRatio="aspect-[3/2]"
-                  />
+                  {treatment.photo ? (
+                    <div className="relative aspect-[3/2] overflow-hidden bg-sand-light">
+                      <Image
+                        src={treatment.photo}
+                        alt={treatment.image}
+                        fill
+                        className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        quality={100}
+                      />
+                    </div>
+                  ) : (
+                    <ImagePlaceholder
+                      label={treatment.image}
+                      aspectRatio="aspect-[3/2]"
+                    />
+                  )}
                   <div className="p-6">
                     <h3 className="font-[family-name:var(--font-heading)] text-xl font-medium text-charcoal mb-1">
                       {treatment.title}
@@ -370,47 +387,47 @@ export default function HomePage() {
             {[
               {
                 src: "/images/results/before-after-1.png",
-                alt: "Acne treatment results — before and after",
+                alt: "Acne treatment results, before and after",
                 label: "Acne & Texture Improvement",
               },
               {
                 src: "/images/results/before-after-2.png",
-                alt: "Pigmentation correction results — before and after",
+                alt: "Pigmentation correction results, before and after",
                 label: "Pigmentation Correction",
               },
               {
                 src: "/images/results/before-after-3.png",
-                alt: "Acne clearance results — before and after",
+                alt: "Acne clearance results, before and after",
                 label: "Acne Clearance & Skin Clarity",
               },
               {
                 src: "/images/results/before-after-4.png",
-                alt: "Scalp and hair treatment results — before and after",
+                alt: "Scalp and hair treatment results, before and after",
                 label: "Scalp & Hair Restoration",
               },
               {
                 src: "/images/results/before-after-5.png",
-                alt: "Tattoo removal results — before and after",
+                alt: "Tattoo removal results, before and after",
                 label: "PicoSure Pro Tattoo Removal",
               },
               {
                 src: "/images/results/before-after-6.png",
-                alt: "Forehead acne treatment results — before and after",
+                alt: "Forehead acne treatment results, before and after",
                 label: "Acne & Skin Smoothing",
               },
               {
                 src: "/images/results/before-after-7.png",
-                alt: "Scalp lesion removal results — before and after",
+                alt: "Scalp lesion removal results, before and after",
                 label: "DPN Mole Removal",
               },
               {
                 src: "/images/results/before-after-8.png",
-                alt: "Dermal filler results — before and after",
+                alt: "Dermal filler results, before and after",
                 label: "Dermal Filler Enhancement",
               },
               {
                 src: "/images/results/before-after-9.png",
-                alt: "Pore refinement and skin texture results — before and after",
+                alt: "Pore refinement and skin texture results, before and after",
                 label: "Pore Refinement & Skin Texture",
               },
             ].map((result, i) => (
@@ -423,6 +440,7 @@ export default function HomePage() {
                       fill
                       className="object-cover group-hover:scale-[1.02] transition-transform duration-700"
                       sizes="(max-width: 640px) 50vw, 25vw"
+                      quality={100}
                     />
                   </div>
                   <p className="text-sm text-charcoal mt-3 font-medium">
@@ -520,6 +538,11 @@ export default function HomePage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center text-sm text-charcoal tracking-wider border-b border-charcoal/30 pb-1 hover:border-champagne-dark hover:text-champagne-dark transition-colors group"
               >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="mr-2 text-champagne-dark">
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                  <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+                </svg>
                 Follow on Instagram
                 <ArrowRight
                   size={14}
@@ -532,6 +555,9 @@ export default function HomePage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center text-sm text-charcoal tracking-wider border-b border-charcoal/30 pb-1 hover:border-champagne-dark hover:text-champagne-dark transition-colors group"
               >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" className="mr-2 text-champagne-dark">
+                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 0 0-.79-.05A6.34 6.34 0 0 0 3.15 15a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.71a8.2 8.2 0 0 0 4.76 1.52v-3.4a4.85 4.85 0 0 1-1-.14z" />
+                </svg>
                 Follow on TikTok
                 <ArrowRight
                   size={14}
@@ -617,7 +643,7 @@ export default function HomePage() {
               {
                 name: "Kyarra R.",
                 review:
-                  "I absolutely love this place! Reena is incredibly knowledgeable about skin and takes the time to explain everything in detail. It's so refreshing — and honestly rare — to find a skincare center that truly understands and caters to the unique needs of diverse skin types.",
+                  "I absolutely love this place! Reena is incredibly knowledgeable about skin and takes the time to explain everything in detail. It's so refreshing, and honestly rare, to find a skincare center that truly understands and caters to the unique needs of diverse skin types.",
                 service: "Skincare Consultation",
               },
               {
@@ -717,10 +743,11 @@ export default function HomePage() {
               <div className="aspect-[4/3] relative w-full overflow-hidden bg-sand-light">
                 <Image
                   src="/images/team/jeffery-and-anay.png"
-                  alt="Dr. Jeffrey Scales and Anay Castro — clinical leadership"
+                  alt="Dr. Jeffrey Scales and Anay Castro, clinical leadership"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
+                  quality={100}
                 />
               </div>
             </FadeIn>
@@ -800,6 +827,7 @@ export default function HomePage() {
                       fill
                       className="object-cover object-top"
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      quality={100}
                     />
                   </div>
                   <h3 className="font-[family-name:var(--font-heading)] text-lg font-medium text-charcoal">
@@ -890,6 +918,7 @@ export default function HomePage() {
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
+                  quality={100}
                 />
               </div>
             </FadeIn>

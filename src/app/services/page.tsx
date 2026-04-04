@@ -13,6 +13,7 @@ interface Service {
   description: string;
   duration?: string;
   image: string;
+  photo?: string;
 }
 
 const injectables: Service[] = [
@@ -20,8 +21,9 @@ const injectables: Service[] = [
     name: "Neuromodulators",
     tagline: "Botox · Dysport · Xeomin · Daxxify",
     description:
-      "Temporarily smooth fine lines and dynamic wrinkles — especially across the forehead, between the brows, and around the eyes. Results appear within two weeks and typically last several months. Repeat treatments are recommended to maintain your refreshed look.",
+      "Temporarily smooth fine lines and dynamic wrinkles, especially across the forehead, between the brows, and around the eyes. Results appear within two weeks and typically last several months. Repeat treatments are recommended to maintain your refreshed look.",
     image: "Neuromodulator injection treatment",
+    photo: "/images/services/neuromodulators.png",
   },
   {
     name: "Dermal Fillers",
@@ -29,6 +31,7 @@ const injectables: Service[] = [
     description:
       "Restore lost volume, smooth deep creases, and refine facial contours using premium hyaluronic acid fillers. Results are natural-looking and can last from several months to over a year. Ideal for lips, cheeks, jawline, and under-eye hollows.",
     image: "Dermal filler treatment",
+    photo: "/images/services/dermal-fillers.png",
   },
 ];
 
@@ -44,8 +47,9 @@ const advancedTreatments: Service[] = [
     name: "PicoSure Pro",
     tagline: "Pigment Correction & Skin Revitalization",
     description:
-      "Next-generation picosecond laser technology targets melasma, hyperpigmentation, sunspots, acne scars, and uneven tone. Delivers energy so rapidly that pigment shatters without burning surrounding tissue — stimulating your skin's natural renewal for brighter, younger-looking results.",
+      "Next-generation picosecond laser technology targets melasma, hyperpigmentation, sunspots, acne scars, and uneven tone. Delivers energy so rapidly that pigment shatters without burning surrounding tissue, stimulating your skin's natural renewal for brighter, younger-looking results.",
     image: "PicoSure Pro laser treatment",
+    photo: "/images/services/picosure-pro.png",
   },
   {
     name: "PicoSure Pro for Tattoo Removal",
@@ -60,6 +64,7 @@ const advancedTreatments: Service[] = [
     description:
       "Concentrated light energy targets and reduces unwanted hair on the face, bikini area, underarms, legs, and back. Multiple sessions are typically needed for lasting smoothness across all skin types.",
     image: "Laser hair removal treatment",
+    photo: "/images/services/laser-hair-removal.png",
   },
   {
     name: "Flesh Mole Removal",
@@ -67,6 +72,7 @@ const advancedTreatments: Service[] = [
     description:
       "Safe and precise removal of small flesh-colored, brown, or black moles on the face, neck, back, and chest for a smoother, more even complexion.",
     image: "Cosmetic mole removal procedure",
+    photo: "/images/services/flesh-mole-removal.png",
   },
 ];
 
@@ -77,6 +83,7 @@ const skinRejuvenation: Service[] = [
     description:
       "Medical-grade microneedling creates controlled micro-injuries that stimulate your skin's natural collagen and elastin production. Effective for fine lines, acne scars, wrinkles, and uneven texture. Customizable for face, neck, and décolletage.",
     image: "SkinPen microneedling treatment",
+    photo: "/images/services/medical-microneedling.png",
   },
   {
     name: "PRP Hair Treatments",
@@ -116,7 +123,7 @@ const facials: Service[] = [
     name: "Back Facial Treatment",
     tagline: "Clarity & Glow for the Back",
     description:
-      "Target back acne, congestion, and uneven texture with a dedicated cleansing, exfoliation, extraction, and hydration treatment — finished with massage, mask, body cream, and sunscreen.",
+      "Target back acne, congestion, and uneven texture with a dedicated cleansing, exfoliation, extraction, and hydration treatment, finished with massage, mask, body cream, and sunscreen.",
     duration: "45 minutes",
     image: "Back facial treatment",
   },
@@ -140,7 +147,7 @@ const facials: Service[] = [
     name: "Microdermabrasion & Skin Facial Treatment",
     tagline: "Combined Deep Cleanse & Hydration",
     description:
-      "The best of both worlds — medical-grade microdermabrasion paired with a relaxing, hydrating facial for a deeper cleanse and visible glow.",
+      "The best of both worlds. Medical-grade microdermabrasion paired with a relaxing, hydrating facial for a deeper cleanse and visible glow.",
     duration: "60 minutes",
     image: "Combined microdermabrasion and facial",
   },
@@ -154,7 +161,20 @@ const addOns = [
 function ServiceCard({ service }: { service: Service }) {
   return (
     <div className="group bg-warm-white border border-sand/60 hover:border-champagne/30 transition-all duration-500 hover:shadow-[0_8px_30px_rgba(0,0,0,0.04)]">
-      <ImagePlaceholder label={service.image} aspectRatio="aspect-[16/9]" />
+      {service.photo ? (
+        <div className="relative aspect-[16/9] overflow-hidden bg-sand-light">
+          <Image
+            src={service.photo}
+            alt={service.image}
+            fill
+            className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
+            sizes="(max-width: 768px) 100vw, 50vw"
+            quality={100}
+          />
+        </div>
+      ) : (
+        <ImagePlaceholder label={service.image} aspectRatio="aspect-[16/9]" />
+      )}
       <div className="p-6 md:p-8">
         <div className="flex items-start justify-between gap-4 mb-2">
           <h3 className="font-[family-name:var(--font-heading)] text-xl md:text-2xl font-medium text-charcoal">
@@ -255,6 +275,7 @@ export default function ServicesPage() {
             fill
             className="object-cover object-center"
             sizes="100vw"
+            quality={100}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-charcoal/40 to-transparent" />
           <div className="absolute inset-0 flex items-center">
@@ -296,7 +317,7 @@ export default function ServicesPage() {
           id="injectables"
           eyebrow="Injectables"
           title="Expert Injectable Treatments"
-          description="Precisely placed neuromodulators and fillers to smooth, restore, and enhance — with natural-looking results and minimal downtime."
+          description="Precisely placed neuromodulators and fillers to smooth, restore, and enhance with natural-looking results and minimal downtime."
           services={injectables}
         />
 
